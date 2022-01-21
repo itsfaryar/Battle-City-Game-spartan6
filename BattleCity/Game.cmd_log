@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "D:/Battle-City-Game-spartan6/BattleCity/Game.xst" -ofn "D:/Battle-City-Game-spartan6/BattleCity/Game.syr" 
+xst -intstyle ise -ifn "D:/Battle-City-Game-spartan6/BattleCity/Game.xst" -ofn "D:/Battle-City-Game-spartan6/BattleCity/Game.syr" 
