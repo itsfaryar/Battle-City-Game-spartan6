@@ -1,0 +1,154 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
+ 
+--> Reading design: CAD971Test.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "CAD971Test.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "CAD971Test"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-tqg144
+
+---- Source Options
+Top Module Name                    : CAD971Test
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\VGA_Square.vhd" into library work
+Parsing entity <VGA_Square>.
+Parsing architecture <Behavioral> of entity <vga_square>.
+Parsing VHDL file "D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\VGA_controller.vhd" into library work
+Parsing entity <VGA_controller>.
+Parsing architecture <Behavioral> of entity <vga_controller>.
+Parsing VHDL file "D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\CAD971Test.vhd" into library work
+Parsing entity <CAD971Test>.
+Parsing architecture <CAD971Test> of entity <cad971test>.
+WARNING:HDLCompiler:946 - "D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\CAD971Test.vhd" Line 69: Actual for formal port reset is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\CAD971Test.vhd" Line 79: Actual for formal port reset is neither a static name nor a globally static expression
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <CAD971Test> (architecture <CAD971Test>) from library <work>.
+
+Elaborating entity <VGA_controller> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <VGA_Square> (architecture <Behavioral>) from library <work>.
+ERROR:HDLCompiler:1401 - "D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\VGA_Square.vhd" Line 38: Signal posPreScaler[7] in unit VGA_Square is connected to following multiple drivers:
+Driver 0: output signal posPreScaler[7] of instance Flip-flop (posPreScaler).
+Driver 1: output signal posPreScaler[7] of instance Latch (posPreScaler[7]).
+Driver 0: output signal posPreScaler[6] of instance Flip-flop (posPreScaler).
+Driver 1: output signal posPreScaler[6] of instance Latch (posPreScaler[6]).
+Driver 0: output signal posPreScaler[5] of instance Flip-flop (posPreScaler).
+Driver 1: output signal posPreScaler[5] of instance Latch (posPreScaler[5]).
+Driver 0: output signal posPreScaler[4] of instance Flip-flop (posPreScaler).
+Driver 1: output signal posPreScaler[4] of instance Latch (posPreScaler[4]).
+Driver 0: output signal posPreScaler[3] of instance Flip-flop (posPreScaler).
+Driver 1: output signal posPreScaler[3] of instance Latch (posPreScaler[3]).
+Driver 0: output signal posPreScaler[2] of instance Flip-flop (posPreScaler).
+Driver 1: output signal posPreScaler[2] of instance Latch (posPreScaler[2]).
+Driver 0: output signal posPreScaler[1] of instance Flip-flop (posPreScaler).
+Driver 1: output signal posPreScaler[1] of instance Latch (posPreScaler[1]).
+Driver 0: output signal posPreScaler[0] of instance Flip-flop (posPreScaler).
+Driver 1: output signal posPreScaler[0] of instance Latch (posPreScaler[0]).
+Netlist CAD971Test(CAD971Test) remains a blackbox, due to errors in its contents
+--> 
+
+Total memory usage is 4464932 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

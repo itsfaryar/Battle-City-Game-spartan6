@@ -1,0 +1,29 @@
+# VGA
+NET "VGA_HS"        LOC = P87;
+NET "VGA_VS"        LOC = P85;  
+NET "VGA_R[0]"      LOC = P79;
+NET "VGA_R[1]"      LOC = P80;  
+NET "VGA_G[0]"      LOC = P81;
+NET "VGA_G[1]"      LOC = P82; 
+NET "VGA_B[0]"      LOC = P83;
+NET "VGA_B[1]"      LOC = P84;
+
+# dip-switches
+NET "SW[0]"    LOC = P51;
+NET "SW[1]"    LOC = P48;
+NET "SW[2]"    LOC = P55;
+NET "SW[3]"    LOC = P56;
+NET "SW[4]"    LOC = P57;
+NET "SW[5]"    LOC = P58;
+NET "SW[6]"    LOC = P66;
+NET "SW[7]"    LOC = P59;
+
+# Push-Buttons
+NET "Key[0]"     LOC = P78;
+NET "Key[1]"     LOC = P75;
+NET "Key[2]"     LOC = P67;
+NET "Key[3]"     LOC = P74;
+
+NET "CLOCK_24"  		LOC = P50;   # 24MHz on-board clock
+NET "RESET_N"     LOC = p133;  # active-low USER_PB button
+

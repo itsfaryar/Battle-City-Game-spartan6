@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\CAD971Test.ncd
+OUTFILE=D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\CAD971Test.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx
+LICENSE=WebPack
+USER_INFO=__0_0_0
