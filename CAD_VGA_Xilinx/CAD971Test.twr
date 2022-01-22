@@ -37,7 +37,7 @@ Setup/Hold to clock CLOCK_24
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-RESET_N     |    3.786(R)|      SLOW  |   -1.165(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+RESET_N     |    3.380(R)|      SLOW  |   -1.027(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock CLOCK_24 to Pad
@@ -45,14 +45,14 @@ Clock CLOCK_24 to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-VGA_B<0>    |        19.723(R)|      SLOW  |         4.278(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_B<1>    |        19.505(R)|      SLOW  |         4.333(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_G<0>    |        20.153(R)|      SLOW  |         4.521(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_G<1>    |        19.932(R)|      SLOW  |         4.558(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_HS      |        10.989(R)|      SLOW  |         4.422(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_R<0>    |        19.266(R)|      SLOW  |         5.389(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_R<1>    |        19.173(R)|      SLOW  |         5.063(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_VS      |        11.075(R)|      SLOW  |         4.125(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_B<0>    |        19.921(R)|      SLOW  |         5.419(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_B<1>    |        19.225(R)|      SLOW  |         4.916(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_G<0>    |        20.043(R)|      SLOW  |         5.519(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_G<1>    |        19.808(R)|      SLOW  |         5.178(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_HS      |        10.582(R)|      SLOW  |         4.221(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_R<0>    |        20.163(R)|      SLOW  |         5.368(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_R<1>    |        19.834(R)|      SLOW  |         5.284(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_VS      |        11.327(R)|      SLOW  |         4.178(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock CLOCK_24
@@ -60,18 +60,18 @@ Clock to Setup on destination clock CLOCK_24
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLOCK_24       |    4.051|         |         |         |
+CLOCK_24       |    4.536|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Sat Jan 22 20:20:53 2022 
+Analysis completed Sun Jan 23 00:13:13 2022 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 4570 MB
+Peak Memory Usage: 4571 MB
 
 
 
