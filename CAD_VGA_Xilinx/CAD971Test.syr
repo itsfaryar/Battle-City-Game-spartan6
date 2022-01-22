@@ -10,7 +10,7 @@ Total CPU time to Xst completion: 0.14 secs
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Reading design: CAD971Test.prj
 
@@ -126,7 +126,7 @@ Elaborating entity <CAD971Test> (architecture <CAD971Test>) from library <work>.
 Elaborating entity <VGA_controller> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <VGA_Square> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:634 - "D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\VGA_Square.vhd" Line 22: Net <sample_array[0][2][1]> does not have a driver.
+WARNING:HDLCompiler:634 - "D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\VGA_Square.vhd" Line 23: Net <ground[0][2][2]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -146,8 +146,8 @@ Synthesizing Unit <VGA_controller>.
     Found 11-bit register for signal <CurrentHPos>.
     Found 11-bit adder for signal <CurrentHPos[10]_GND_6_o_add_1_OUT> created at line 48.
     Found 11-bit adder for signal <CurrentVPos[10]_GND_6_o_add_3_OUT> created at line 51.
-    Found 11-bit subtractor for signal <GND_6_o_GND_6_o_sub_20_OUT<10:0>> created at line 79.
     Found 11-bit subtractor for signal <GND_6_o_GND_6_o_sub_17_OUT<10:0>> created at line 76.
+    Found 11-bit subtractor for signal <GND_6_o_GND_6_o_sub_20_OUT<10:0>> created at line 79.
     Found 11-bit comparator greater for signal <CurrentHPos[10]_GND_6_o_LessThan_1_o> created at line 47
     Found 11-bit comparator greater for signal <CurrentVPos[10]_GND_6_o_LessThan_3_o> created at line 50
     Found 11-bit comparator lessequal for signal <CurrentHPos[10]_GND_6_o_LessThan_10_o> created at line 61
@@ -165,116 +165,459 @@ Unit <VGA_controller> synthesized.
 
 Synthesizing Unit <VGA_Square>.
     Related source file is "D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\VGA_Square.vhd".
-WARNING:Xst:2935 - Signal 'sample_array<0><2>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<0><3>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<0><4>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<0><5>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<0><6>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<0><7>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<0><8>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<0><9>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<1><0>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<1><2>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<1><3>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<1><4>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<1><5>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<1><6>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<1><7>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<1><8>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<1><9>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<2><0>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<2><1>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<2><2>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<2><3>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<2><4>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<2><5>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<2><6>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<2><7>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<2><8>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<2><9>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<3><0>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<3><1>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<3><2>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<3><3>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<3><4>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<3><5>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<3><6>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<3><7>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<3><8>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<3><9>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<4><0>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<4><1>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<4><2>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<4><3>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<4><4>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<4><5>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<4><6>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<4><7>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<4><8>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<4><9>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<5><0>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<5><1>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<5><2>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<5><3>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<5><4>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<5><5>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<5><6>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<5><7>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<5><8>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<5><9>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<6><0>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<6><1>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<6><2>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<6><3>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<6><4>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<6><5>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<6><6>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<6><7>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<6><8>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<6><9>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<7><0>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<7><1>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<7><2>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<7><3>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<7><4>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<7><5>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<7><6>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<7><7>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<7><8>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<7><9>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<8><0>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<8><1>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<8><2>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<8><3>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<8><4>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<8><5>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<8><6>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<8><7>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<8><8>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<8><9>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<9><0>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<9><1>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<9><2>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<9><3>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<9><4>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<9><5>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<9><6>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<9><7>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<9><8>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'sample_array<9><9>', unconnected in block 'VGA_Square', is tied to its initial value (00).
-    Found 11-bit comparator greater for signal <n0043> created at line 120
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_35_o> created at line 120
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_37_o> created at line 121
-    Found 11-bit comparator greater for signal <n0053> created at line 124
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_41_o> created at line 124
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_43_o> created at line 125
-    Found 11-bit comparator lessequal for signal <n0066> created at line 127
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_49_o> created at line 127
-    Found 11-bit comparator lessequal for signal <n0071> created at line 127
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_51_o> created at line 127
+WARNING:Xst:2935 - Signal 'ground<0><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<0><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<0><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<0><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<0><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<0><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<0><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<0><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<0><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<0><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<0><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<0><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<0><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<0><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<0><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<0><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<0><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<0><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<1><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><1>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<2><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><1>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<3><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><1>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<4><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><1>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<5><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><1>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<6><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><1>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<7><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><1>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<8><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><1>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<9><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><1>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<10><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><1>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<11><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><1>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<12><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><1>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<13><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><1>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<14><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><1>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<15><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><1>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<16><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><1>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<17><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><1>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<18><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><0>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><1>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><4>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><5>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><6>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><7>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><8>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><9>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><10>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><11>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><12>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><13>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><14>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><15>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><16>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:2935 - Signal 'ground<19><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+WARNING:Xst:737 - Found 1-bit latch for signal <posx<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <posx<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <posx<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <posx<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <posx<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <posy<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <posy<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <posy<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <posy<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <posy<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 11-bit comparator greater for signal <n0045> created at line 123
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_37_o> created at line 123
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_39_o> created at line 124
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_41_o> created at line 125
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_43_o> created at line 126
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_45_o> created at line 127
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_47_o> created at line 128
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_49_o> created at line 129
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_51_o> created at line 130
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_53_o> created at line 131
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_55_o> created at line 132
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_57_o> created at line 133
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_59_o> created at line 134
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_61_o> created at line 135
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_63_o> created at line 136
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_65_o> created at line 137
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_67_o> created at line 138
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_69_o> created at line 139
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_71_o> created at line 140
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_73_o> created at line 141
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_75_o> created at line 142
+    Found 11-bit comparator greater for signal <n0229> created at line 146
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_97_o> created at line 146
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_99_o> created at line 147
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_101_o> created at line 148
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_103_o> created at line 149
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_105_o> created at line 150
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_107_o> created at line 151
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_109_o> created at line 152
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_111_o> created at line 153
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_113_o> created at line 154
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_115_o> created at line 155
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_117_o> created at line 156
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_119_o> created at line 157
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_121_o> created at line 158
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_123_o> created at line 159
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_125_o> created at line 160
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_127_o> created at line 161
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_129_o> created at line 162
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_131_o> created at line 163
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_133_o> created at line 164
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_135_o> created at line 165
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_7_o_LessThan_159_o> created at line 168
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_7_o_LessThan_161_o> created at line 168
     Summary:
-	inferred  10 Comparator(s).
-	inferred   7 Multiplexer(s).
+	inferred  10 Latch(s).
+	inferred  44 Comparator(s).
+	inferred 160 Multiplexer(s).
 Unit <VGA_Square> synthesized.
 
 =========================================================================
@@ -286,14 +629,17 @@ Macro Statistics
  11-bit subtractor                                     : 2
 # Registers                                            : 2
  11-bit register                                       : 2
-# Comparators                                          : 18
- 11-bit comparator greater                             : 12
- 11-bit comparator lessequal                           : 6
-# Multiplexers                                         : 14
- 1-bit 2-to-1 multiplexer                              : 4
+# Latches                                              : 10
+ 1-bit latch                                           : 10
+# Comparators                                          : 52
+ 11-bit comparator greater                             : 48
+ 11-bit comparator lessequal                           : 4
+# Multiplexers                                         : 167
+ 1-bit 2-to-1 multiplexer                              : 154
  11-bit 2-to-1 multiplexer                             : 4
- 2-bit 2-to-1 multiplexer                              : 5
- 6-bit 2-to-1 multiplexer                              : 1
+ 2-bit 2-to-1 multiplexer                              : 3
+ 3-bit 2-to-1 multiplexer                              : 4
+ 6-bit 2-to-1 multiplexer                              : 2
 
 =========================================================================
 
@@ -315,20 +661,55 @@ Macro Statistics
  11-bit subtractor                                     : 2
 # Counters                                             : 2
  11-bit up counter                                     : 2
-# Comparators                                          : 18
- 11-bit comparator greater                             : 12
- 11-bit comparator lessequal                           : 6
-# Multiplexers                                         : 12
- 1-bit 2-to-1 multiplexer                              : 4
+# Comparators                                          : 52
+ 11-bit comparator greater                             : 48
+ 11-bit comparator lessequal                           : 4
+# Multiplexers                                         : 165
+ 1-bit 2-to-1 multiplexer                              : 154
  11-bit 2-to-1 multiplexer                             : 2
- 2-bit 2-to-1 multiplexer                              : 5
- 6-bit 2-to-1 multiplexer                              : 1
+ 2-bit 2-to-1 multiplexer                              : 3
+ 3-bit 2-to-1 multiplexer                              : 4
+ 6-bit 2-to-1 multiplexer                              : 2
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
+   incompatible with the Spartan6 architecture. The two primary causes of this is
+   either a register or latch described with both an asynchronous set and
+   asynchronous reset, or a register or latch described with an asynchronous
+   set or reset which however has an initialization value of the opposite 
+   polarity (i.e. asynchronous reset with an initialization value of 1).
+    While this circuit can be built, it creates a sub-optimal implementation
+   in terms of area, power and performance. For a more optimal implementation
+   Xilinx highly recommends one of the following:
+
+          1) Remove either the set or reset from all registers and latches
+             if not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Ensure all registers have the same initialization value as the
+             described asynchronous set or reset polarity
+          4) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set and reset:
+    posy_0 in unit <VGA_Square>
+    posy_2 in unit <VGA_Square>
+    posy_3 in unit <VGA_Square>
+    posy_1 in unit <VGA_Square>
+    posy_4 in unit <VGA_Square>
+    posx_0 in unit <VGA_Square>
+    posx_1 in unit <VGA_Square>
+    posx_2 in unit <VGA_Square>
+    posx_4 in unit <VGA_Square>
+    posx_3 in unit <VGA_Square>
+
 
 Optimizing unit <CAD971Test> ...
 
@@ -340,7 +721,7 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_Control/Current
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block CAD971Test, actual ratio is 1.
+Found area constraint ratio of 100 (+ 5) on block CAD971Test, actual ratio is 5.
 
 Final Macro Processing ...
 
@@ -372,19 +753,20 @@ Top Level Output File Name         : CAD971Test.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 115
+# BELS                             : 263
 #      GND                         : 1
 #      INV                         : 1
-#      LUT2                        : 9
-#      LUT3                        : 12
-#      LUT4                        : 4
-#      LUT5                        : 12
-#      LUT6                        : 38
+#      LUT2                        : 16
+#      LUT3                        : 22
+#      LUT4                        : 18
+#      LUT5                        : 46
+#      LUT6                        : 121
 #      MUXCY                       : 18
 #      XORCY                       : 20
-# FlipFlops/Latches                : 20
+# FlipFlops/Latches                : 30
 #      FDC                         : 10
 #      FDCE                        : 10
+#      LD                          : 10
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 9
@@ -398,16 +780,16 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              20  out of  11440     0%  
- Number of Slice LUTs:                   76  out of   5720     1%  
-    Number used as Logic:                76  out of   5720     1%  
+ Number of Slice Registers:              30  out of  11440     0%  
+ Number of Slice LUTs:                  224  out of   5720     3%  
+    Number used as Logic:               224  out of   5720     3%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     76
-   Number with an unused Flip Flop:      56  out of     76    73%  
-   Number with an unused LUT:             0  out of     76     0%  
-   Number of fully used LUT-FF pairs:    20  out of     76    26%  
-   Number of unique control sets:         3
+ Number of LUT Flip Flop pairs used:    224
+   Number with an unused Flip Flop:     194  out of    224    86%  
+   Number with an unused LUT:             0  out of    224     0%  
+   Number of fully used LUT-FF pairs:    30  out of    224    13%  
+   Number of unique control sets:         7
 
 IO Utilization: 
  Number of IOs:                          22
@@ -434,11 +816,19 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-CLOCK_24                           | BUFGP                  | 20    |
------------------------------------+------------------------+-------+
+-------------------------------------------------------------------+------------------------+-------+
+Clock Signal                                                       | Clock buffer(FF name)  | Load  |
+-------------------------------------------------------------------+------------------------+-------+
+CLOCK_24                                                           | BUFGP                  | 20    |
+VGA_SQ/GND_7_o_GND_7_o_OR_658_o(VGA_SQ/GND_7_o_GND_7_o_OR_658_o5:O)| NONE(*)(VGA_SQ/posy_0) | 4     |
+VGA_SQ/posy_2_G(VGA_SQ/posy_2_G:O)                                 | NONE(*)(VGA_SQ/posy_2) | 1     |
+VGA_SQ/GND_7_o_GND_7_o_OR_50_o(VGA_SQ/GND_7_o_GND_7_o_OR_50_o5:O)  | NONE(*)(VGA_SQ/posx_0) | 4     |
+VGA_SQ/posx_2_G(VGA_SQ/posx_2_G:O)                                 | NONE(*)(VGA_SQ/posx_2) | 1     |
+-------------------------------------------------------------------+------------------------+-------+
+(*) These 4 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -448,9 +838,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 4.474ns (Maximum Frequency: 223.514MHz)
+   Minimum period: 4.532ns (Maximum Frequency: 220.653MHz)
    Minimum input arrival time before clock: 4.008ns
-   Maximum output required time after clock: 15.391ns
+   Maximum output required time after clock: 17.810ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -459,26 +849,28 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLOCK_24'
-  Clock period: 4.474ns (frequency: 223.514MHz)
+  Clock period: 4.532ns (frequency: 220.653MHz)
   Total number of paths / destination ports: 1141 / 30
 -------------------------------------------------------------------------
-Delay:               4.474ns (Levels of Logic = 2)
-  Source:            VGA_Control/CurrentHPos_0 (FF)
-  Destination:       VGA_Control/CurrentVPos_9 (FF)
+Delay:               4.532ns (Levels of Logic = 4)
+  Source:            VGA_Control/CurrentVPos_3 (FF)
+  Destination:       VGA_Control/CurrentVPos_0 (FF)
   Source Clock:      CLOCK_24 rising
   Destination Clock: CLOCK_24 rising
 
-  Data Path: VGA_Control/CurrentHPos_0 to VGA_Control/CurrentVPos_9
+  Data Path: VGA_Control/CurrentVPos_3 to VGA_Control/CurrentVPos_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              2   0.525   1.156  VGA_Control/CurrentHPos_0 (VGA_Control/CurrentHPos_0)
-     LUT5:I0->O           10   0.254   1.008  VGA_Control/CurrentHPos[10]_GND_6_o_LessThan_1_o_inv_inv1_SW0 (N4)
-     LUT6:I5->O            9   0.254   0.975  VGA_Control/CurrentHPos[10]_GND_6_o_LessThan_1_o_inv1 (VGA_Control/CurrentHPos[10]_GND_6_o_LessThan_1_o_inv)
-     FDCE:CE                   0.302          VGA_Control/CurrentVPos_1
+     FDCE:C->Q            18   0.525   1.343  VGA_Control/CurrentVPos_3 (VGA_Control/CurrentVPos_3)
+     LUT2:I0->O            8   0.250   0.944  VGA_Control/Blank_INV_22_o111 (VGA_Control/Blank_INV_22_o11)
+     LUT6:I5->O            1   0.254   0.000  VGA_Control/CurrentVPos[10]_GND_6_o_LessThan_3_o_inv_inv1 (VGA_Control/CurrentVPos[10]_GND_6_o_LessThan_3_o_inv_inv)
+     XORCY:CI->O           1   0.206   0.682  VGA_Control/Mcount_CurrentVPos_xor<0> (VGA_Control/Mcount_CurrentVPos)
+     LUT3:I2->O            1   0.254   0.000  VGA_Control/CurrentVPos_0_dpot (VGA_Control/CurrentVPos_0_dpot)
+     FDCE:D                    0.074          VGA_Control/CurrentVPos_0
     ----------------------------------------
-    Total                      4.474ns (1.335ns logic, 3.139ns route)
-                                       (29.8% logic, 70.2% route)
+    Total                      4.532ns (1.563ns logic, 2.969ns route)
+                                       (34.5% logic, 65.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLOCK_24'
@@ -502,30 +894,119 @@ Offset:              4.008ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLOCK_24'
-  Total number of paths / destination ports: 6872 / 8
+  Total number of paths / destination ports: 5102 / 8
 -------------------------------------------------------------------------
-Offset:              15.391ns (Levels of Logic = 9)
+Offset:              17.810ns (Levels of Logic = 10)
   Source:            VGA_Control/CurrentVPos_3 (FF)
-  Destination:       VGA_B<1> (PAD)
+  Destination:       VGA_B<0> (PAD)
   Source Clock:      CLOCK_24 rising
 
-  Data Path: VGA_Control/CurrentVPos_3 to VGA_B<1>
+  Data Path: VGA_Control/CurrentVPos_3 to VGA_B<0>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             7   0.525   1.018  VGA_Control/CurrentVPos_3 (VGA_Control/CurrentVPos_3)
+     FDCE:C->Q            18   0.525   1.343  VGA_Control/CurrentVPos_3 (VGA_Control/CurrentVPos_3)
      LUT2:I0->O            8   0.250   0.944  VGA_Control/Blank_INV_22_o111 (VGA_Control/Blank_INV_22_o11)
-     LUT6:I5->O            6   0.254   0.876  VGA_Control/Blank_INV_22_o2 (VGA_Control/Blank_INV_22_o2)
-     LUT5:I4->O           21   0.254   1.765  VGA_Control/Blank_INV_22_o3 (VGA_Control/Blank_INV_22_o)
-     LUT6:I0->O            2   0.254   1.156  VGA_Control/Mmux_ScanlineX101 (ScanlineX<8>)
-     LUT5:I0->O            1   0.254   1.137  VGA_SQ/Mmux_posx[3]_X_7_o_wide_mux_73_OUT23_SW1 (N32)
-     LUT6:I0->O            8   0.254   1.172  VGA_SQ/Mmux_posx[3]_X_7_o_wide_mux_73_OUT23 (VGA_SQ/Mmux_posx[3]_X_7_o_wide_mux_73_OUT23)
-     LUT3:I0->O            3   0.235   1.196  VGA_SQ/Mmux_posx[3]_X_7_o_wide_mux_73_OUT13 (VGA_SQ/posx[3]_X_7_o_wide_mux_73_OUT<0>)
-     LUT6:I1->O            1   0.254   0.681  VGA_Control/Mmux_BLUE21 (VGA_B_1_OBUF)
-     OBUF:I->O                 2.912          VGA_B_1_OBUF (VGA_B<1>)
+     LUT6:I5->O           10   0.254   1.008  VGA_Control/Blank_INV_22_o2 (VGA_Control/Blank_INV_22_o2)
+     LUT5:I4->O           43   0.254   2.159  VGA_Control/Blank_INV_22_o3 (VGA_Control/Blank_INV_22_o)
+     LUT6:I0->O           17   0.254   1.485  VGA_Control/Mmux_ScanlineX101 (ScanlineX<8>)
+     LUT4:I0->O            8   0.254   1.399  VGA_SQ/ScanlineX[10]_GND_7_o_LessThan_47_o121 (VGA_SQ/ScanlineX[10]_GND_7_o_LessThan_47_o12)
+     LUT6:I0->O            1   0.254   0.682  VGA_SQ/ScanlineY[10]_GND_7_o_OR_1250_o2 (VGA_SQ/ScanlineY[10]_GND_7_o_OR_1250_o2)
+     LUT6:I5->O            4   0.254   1.234  VGA_SQ/ScanlineY[10]_GND_7_o_OR_1250_o5 (VGA_SQ/ScanlineY[10]_GND_7_o_OR_1250_o)
+     LUT6:I1->O            1   0.254   1.112  VGA_SQ/ColorOutput<2> (ColorTable<0>)
+     LUT6:I1->O            2   0.254   0.725  VGA_Control/Mmux_BLUE11 (VGA_B_0_OBUF)
+     OBUF:I->O                 2.912          VGA_B_0_OBUF (VGA_B<0>)
     ----------------------------------------
-    Total                     15.391ns (5.446ns logic, 9.945ns route)
-                                       (35.4% logic, 64.6% route)
+    Total                     17.810ns (5.719ns logic, 12.091ns route)
+                                       (32.1% logic, 67.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'VGA_SQ/GND_7_o_GND_7_o_OR_658_o'
+  Total number of paths / destination ports: 24 / 6
+-------------------------------------------------------------------------
+Offset:              8.103ns (Levels of Logic = 4)
+  Source:            VGA_SQ/posy_1 (LATCH)
+  Destination:       VGA_B<1> (PAD)
+  Source Clock:      VGA_SQ/GND_7_o_GND_7_o_OR_658_o falling
+
+  Data Path: VGA_SQ/posy_1 to VGA_B<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               2   0.581   1.181  VGA_SQ/posy_1 (VGA_SQ/posy_1)
+     LUT6:I0->O            2   0.254   0.834  VGA_SQ/ColorOutput<2>_SW0 (N20)
+     LUT6:I4->O            1   0.250   1.112  VGA_SQ/ColorOutput<2> (ColorTable<0>)
+     LUT6:I1->O            2   0.254   0.725  VGA_Control/Mmux_BLUE11 (VGA_B_0_OBUF)
+     OBUF:I->O                 2.912          VGA_B_0_OBUF (VGA_B<0>)
+    ----------------------------------------
+    Total                      8.103ns (4.251ns logic, 3.852ns route)
+                                       (52.5% logic, 47.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'VGA_SQ/GND_7_o_GND_7_o_OR_50_o'
+  Total number of paths / destination ports: 24 / 6
+-------------------------------------------------------------------------
+Offset:              7.792ns (Levels of Logic = 4)
+  Source:            VGA_SQ/posx_4 (LATCH)
+  Destination:       VGA_B<1> (PAD)
+  Source Clock:      VGA_SQ/GND_7_o_GND_7_o_OR_50_o falling
+
+  Data Path: VGA_SQ/posx_4 to VGA_B<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               3   0.581   0.874  VGA_SQ/posx_4 (VGA_SQ/posx_4)
+     LUT6:I4->O            2   0.250   0.834  VGA_SQ/ColorOutput<2>_SW0 (N20)
+     LUT6:I4->O            1   0.250   1.112  VGA_SQ/ColorOutput<2> (ColorTable<0>)
+     LUT6:I1->O            2   0.254   0.725  VGA_Control/Mmux_BLUE11 (VGA_B_0_OBUF)
+     OBUF:I->O                 2.912          VGA_B_0_OBUF (VGA_B<0>)
+    ----------------------------------------
+    Total                      7.792ns (4.247ns logic, 3.545ns route)
+                                       (54.5% logic, 45.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'VGA_SQ/posx_2_G'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              8.118ns (Levels of Logic = 4)
+  Source:            VGA_SQ/posx_2 (LATCH)
+  Destination:       VGA_B<1> (PAD)
+  Source Clock:      VGA_SQ/posx_2_G falling
+
+  Data Path: VGA_SQ/posx_2 to VGA_B<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               3   0.581   1.196  VGA_SQ/posx_2 (VGA_SQ/posx_2)
+     LUT6:I1->O            2   0.254   0.834  VGA_SQ/ColorOutput<2>_SW0 (N20)
+     LUT6:I4->O            1   0.250   1.112  VGA_SQ/ColorOutput<2> (ColorTable<0>)
+     LUT6:I1->O            2   0.254   0.725  VGA_Control/Mmux_BLUE11 (VGA_B_0_OBUF)
+     OBUF:I->O                 2.912          VGA_B_0_OBUF (VGA_B<0>)
+    ----------------------------------------
+    Total                      8.118ns (4.251ns logic, 3.867ns route)
+                                       (52.4% logic, 47.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'VGA_SQ/posy_2_G'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              7.897ns (Levels of Logic = 4)
+  Source:            VGA_SQ/posy_2 (LATCH)
+  Destination:       VGA_B<1> (PAD)
+  Source Clock:      VGA_SQ/posy_2_G falling
+
+  Data Path: VGA_SQ/posy_2 to VGA_B<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               3   0.581   0.994  VGA_SQ/posy_2 (VGA_SQ/posy_2)
+     LUT6:I3->O            2   0.235   0.834  VGA_SQ/ColorOutput<2>_SW0 (N20)
+     LUT6:I4->O            1   0.250   1.112  VGA_SQ/ColorOutput<2> (ColorTable<0>)
+     LUT6:I1->O            2   0.254   0.725  VGA_Control/Mmux_BLUE11 (VGA_B_0_OBUF)
+     OBUF:I->O                 2.912          VGA_B_0_OBUF (VGA_B<0>)
+    ----------------------------------------
+    Total                      7.897ns (4.232ns logic, 3.665ns route)
+                                       (53.6% logic, 46.4% route)
 
 =========================================================================
 
@@ -537,20 +1018,52 @@ Clock to Setup on destination clock CLOCK_24
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLOCK_24       |    4.474|         |         |         |
+CLOCK_24       |    4.532|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VGA_SQ/GND_7_o_GND_7_o_OR_50_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLOCK_24       |         |         |   17.711|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VGA_SQ/GND_7_o_GND_7_o_OR_658_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLOCK_24       |         |         |   18.313|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VGA_SQ/posx_2_G
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLOCK_24       |         |         |   18.925|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VGA_SQ/posy_2_G
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLOCK_24       |         |         |   19.773|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.31 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.39 secs
  
 --> 
 
 Total memory usage is 4501948 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  104 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of warnings :  413 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
 
