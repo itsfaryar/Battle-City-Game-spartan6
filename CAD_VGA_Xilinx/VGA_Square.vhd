@@ -80,13 +80,15 @@ begin
 		elsif rising_edge(CLK_24MHz) then
 			Prescaler <= Prescaler + 1;	 
 			--if Prescaler = "11000011010100000" then  -- Activated every 0,002 sec (2 msec)
-			if Prescaler = "11000011010100000" then  -- Activated every 0,002 sec (2 msec)
+			if Prescaler = "100110001001011010000000" then  -- Activated every 0,002 sec (2 msec)
 				 if key(0)='0' then
 					if pl_posx>0 then
 						pl_posx<=pl_posx-1;
 					end if;
 				end if;
+				Prescaler <= (others => '0');
 			end if;
+			
 		end if;
 	end process PrescalerCounter; 
 
@@ -135,15 +137,15 @@ begin
 				else 18 when ScanlineY>=conv_std_logic_vector(416,10) and ScanlineY<conv_std_logic_vector(438,10)
 				else 19 when ScanlineY>=conv_std_logic_vector(438,10) and ScanlineY<conv_std_logic_vector(460,10);
 				
-
+---------methode 1
 	ColorOutput <= "101010" when (ScanlineY>="0000000000" and ScanlineY<"0000010100") or (ScanlineX>="0000000000" and ScanlineX<"0001100100") or (ScanlineY>="0111001100" and ScanlineY<"0111100000" )or (ScanlineX>="1000011100" and ScanlineX<"1010000000")
-						--else "100101" when pl_posx=posx and pl_posy=posy and tank(CONV_INTEGER(ScanlineY-conv_std_logic_vector(startPositionsY(posy),10)),CONV_INTEGER(ScanlineX-conv_std_logic_vector(startPositionsX(posx),10)))='1'
-						else "100101" when pl_posx=posx and pl_posy=posy
+						else "100101" when pl_posx=posx and pl_posy=posy and tank(CONV_INTEGER(ScanlineY-conv_std_logic_vector(startPositionsY(posy),10)),CONV_INTEGER(ScanlineX-conv_std_logic_vector(startPositionsX(posx),10)))='1'
+						
 						else "000000" when ground(posy,posx)=EMPTY
 						else "110000" when ground(posy,posx)=BRICK
 						else "111111";
 	
-	
+-----------methode 2: replaced with code above	
 --	ColorProcess: process(ScanlineX,ScanlineY)
 --	begin
 --		if (ScanlineY>="0000000000" and ScanlineY<"0000010100") or (ScanlineX>="0000000000" and ScanlineX<"0001100100") or (ScanlineY>="0111001100" and ScanlineY<"0111100000" )or (ScanlineX>="1000011100" and ScanlineX<"1010000000") then
