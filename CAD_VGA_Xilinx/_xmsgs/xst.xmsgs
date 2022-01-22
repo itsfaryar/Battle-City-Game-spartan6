@@ -5,13 +5,316 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="946" delta="new" >"D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\CAD971Test.vhd" Line 69: Actual for formal port <arg fmt="%s" index="1">reset</arg> is neither a static name nor a globally static expression
+<msg type="warning" file="HDLCompiler" num="946" delta="old" >"D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\CAD971Test.vhd" Line 69: Actual for formal port <arg fmt="%s" index="1">reset</arg> is neither a static name nor a globally static expression
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="946" delta="new" >"D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\CAD971Test.vhd" Line 79: Actual for formal port <arg fmt="%s" index="1">reset</arg> is neither a static name nor a globally static expression
+<msg type="warning" file="HDLCompiler" num="946" delta="old" >"D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\CAD971Test.vhd" Line 79: Actual for formal port <arg fmt="%s" index="1">reset</arg> is neither a static name nor a globally static expression
 </msg>
 
-<msg type="error" file="HDLCompiler" num="1401" delta="new" >"D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\VGA_Square.vhd" Line 38: Signal <arg fmt="%s" index="1">posPreScaler[7]</arg> in unit <arg fmt="%s" index="2">VGA_Square</arg> is connected to following multiple drivers:
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\VGA_Square.vhd" Line 22: Net &lt;<arg fmt="%s" index="1">sample_array[0][2][1]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">Key</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">SW</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;0&gt;&lt;2&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;0&gt;&lt;3&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;0&gt;&lt;4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;0&gt;&lt;5&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;0&gt;&lt;6&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;0&gt;&lt;7&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;0&gt;&lt;8&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;0&gt;&lt;9&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;1&gt;&lt;0&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;1&gt;&lt;2&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;1&gt;&lt;3&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;1&gt;&lt;4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;1&gt;&lt;5&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;1&gt;&lt;6&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;1&gt;&lt;7&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;1&gt;&lt;8&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;1&gt;&lt;9&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;2&gt;&lt;0&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;2&gt;&lt;1&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;2&gt;&lt;2&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;2&gt;&lt;3&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;2&gt;&lt;4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;2&gt;&lt;5&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;2&gt;&lt;6&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;2&gt;&lt;7&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;2&gt;&lt;8&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;2&gt;&lt;9&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;3&gt;&lt;0&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;3&gt;&lt;1&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;3&gt;&lt;2&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;3&gt;&lt;3&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;3&gt;&lt;4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;3&gt;&lt;5&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;3&gt;&lt;6&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;3&gt;&lt;7&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;3&gt;&lt;8&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;3&gt;&lt;9&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;4&gt;&lt;0&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;4&gt;&lt;1&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;4&gt;&lt;2&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;4&gt;&lt;3&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;4&gt;&lt;4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;4&gt;&lt;5&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;4&gt;&lt;6&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;4&gt;&lt;7&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;4&gt;&lt;8&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;4&gt;&lt;9&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;5&gt;&lt;0&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;5&gt;&lt;1&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;5&gt;&lt;2&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;5&gt;&lt;3&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;5&gt;&lt;4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;5&gt;&lt;5&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;5&gt;&lt;6&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;5&gt;&lt;7&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;5&gt;&lt;8&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;5&gt;&lt;9&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;6&gt;&lt;0&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;6&gt;&lt;1&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;6&gt;&lt;2&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;6&gt;&lt;3&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;6&gt;&lt;4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;6&gt;&lt;5&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;6&gt;&lt;6&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;6&gt;&lt;7&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;6&gt;&lt;8&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;6&gt;&lt;9&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;7&gt;&lt;0&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;7&gt;&lt;1&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;7&gt;&lt;2&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;7&gt;&lt;3&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;7&gt;&lt;4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;7&gt;&lt;5&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;7&gt;&lt;6&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;7&gt;&lt;7&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;7&gt;&lt;8&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;7&gt;&lt;9&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;8&gt;&lt;0&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;8&gt;&lt;1&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;8&gt;&lt;2&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;8&gt;&lt;3&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;8&gt;&lt;4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;8&gt;&lt;5&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;8&gt;&lt;6&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;8&gt;&lt;7&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;8&gt;&lt;8&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;8&gt;&lt;9&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;9&gt;&lt;0&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;9&gt;&lt;1&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;9&gt;&lt;2&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;9&gt;&lt;3&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;9&gt;&lt;4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;9&gt;&lt;5&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;9&gt;&lt;6&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;9&gt;&lt;7&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;9&gt;&lt;8&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">sample_array&lt;9&gt;&lt;9&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VGA_Square</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">VGA_Control/CurrentVPos_10</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CAD971Test</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">VGA_Control/CurrentHPos_10</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CAD971Test</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 </messages>

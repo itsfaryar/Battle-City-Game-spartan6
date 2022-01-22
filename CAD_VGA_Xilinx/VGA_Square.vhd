@@ -3,6 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
+
 entity VGA_Square is
   port ( CLK_24MHz		: in std_logic;
 			RESET				: in std_logic;
@@ -31,15 +32,18 @@ architecture Behavioral of VGA_Square is
   signal SquareYmax: std_logic_vector(9 downto 0); -- := "0111100000"-SquareWidth;
   signal ColorSelect: std_logic_vector(2 downto 0) := "001";
   signal Prescaler: std_logic_vector(30 downto 0) := (others => '0');
-  signal posPreScaler: std_logic_vector(7 downto 0) := (others => '0');
+  signal preskylinex,preskyliney: std_logic_vector(10 downto 0) := (others => '0');
 
 begin
-
+	
+	sample_array(0,0)<=1;
+	sample_array(0,1)<=1;
+	sample_array(1,1)<=2;
 	PrescalerCounter: process(CLK_24MHz, RESET)
 	begin
 		if RESET = '1' then
 			Prescaler <= (others => '0');
-			posPreScaler  <= (others => '0');
+			--posPreScaler  <= (others => '0');
 			SquareX <= "0111000101";
 			SquareY <= "0001100010";
 			SquareXMoveDir <= '0';
@@ -85,32 +89,45 @@ begin
 		end if;
 	end process PrescalerCounter; 
 	
-	position: process(CLK_24MHz)
-	begin
-		if rising_edge(CLK_24MHz) then
-			posPreScaler <= posPreScaler + 1;
-			if posPreScaler = "00110000" then
-				if posx<9 then
-					posx <= posx+1;
-				else
-					posx <=0;
-					if posy<9 then
-						posy <= posy+1;
-					else
-						posx <= 0;
-						posy <= 0;
-					end if;
-				end if;
-				posPreScaler <= (others => '0');
-			end if;
-		end if;
-	end process position; 
-
-	ColorOutput <=		"110000" when ColorSelect(0) = '1' AND ScanlineX >= SquareX AND ScanlineY >= SquareY AND ScanlineX < SquareX+SquareWidth AND ScanlineY < SquareY+SquareWidth 
-					else	"001100" when ColorSelect(1) = '1' AND ScanlineX >= SquareX AND ScanlineY >= SquareY AND ScanlineX < SquareX+SquareWidth AND ScanlineY < SquareY+SquareWidth 
-					else	"000011" when ColorSelect(2) = '1' AND ScanlineX >= SquareX AND ScanlineY >= SquareY AND ScanlineX < SquareX+SquareWidth AND ScanlineY < SquareY+SquareWidth 
-					else	"111110";
-
+	
+	
+--	positionx: process(ScanlineX)
+--	begin
+--		if ScanlineX>="0000000000" and ScanlineX<"0000110000" then
+--			posx<=0;
+--		elsif ScanlineX>="0011000000" and ScanlineX<"001100000" then
+--			posx<=1;
+--		else
+--			posx <= 2;
+--		end if;
+--		
+--	end process positionx; 
+--	positiony: process(ScanlineY)
+--	begin
+--		if ScanlineY>="0000000000" and ScanlineY<"0000110000" then
+--			posy<=0;
+--		elsif ScanlineY>="0011000000" and ScanlineY<"001100000" then
+--			posy<=1;
+--		else
+--			posy <= 2;
+--		end if;
+--		
+--	end process positiony; 
+--	ColorOutput <=		"110000" when ColorSelect(0) = '1' AND ScanlineX >= SquareX AND ScanlineY >= SquareY AND ScanlineX < SquareX+SquareWidth AND ScanlineY < SquareY+SquareWidth 
+--					else	"001100" when ColorSelect(1) = '1' AND ScanlineX >= SquareX AND ScanlineY >= SquareY AND ScanlineX < SquareX+SquareWidth AND ScanlineY < SquareY+SquareWidth 
+--					else	"000011" when ColorSelect(2) = '1' AND ScanlineX >= SquareX AND ScanlineY >= SquareY AND ScanlineX < SquareX+SquareWidth AND ScanlineY < SquareY+SquareWidth 
+--					else	"111110";
+	posx <= 0 when ScanlineX>=conv_std_logic_vector(100,10) and ScanlineX<conv_std_logic_vector(122,10)
+				else 1 when ScanlineX>=conv_std_logic_vector(122,10) and ScanlineX<conv_std_logic_vector(144,10)
+				else 2;
+				
+	posy <= 0 when ScanlineY>=conv_std_logic_vector(20,10) and ScanlineY<conv_std_logic_vector(42,10)
+				else 1 when ScanlineY>=conv_std_logic_vector(42,10) and ScanlineY<conv_std_logic_vector(64,10)
+				else 2;
+	ColorOutput <= "101010" when (ScanlineY>="0000000000" and ScanlineY<"0000010100") or (ScanlineX>="0000000000" and ScanlineX<"0001100100") or (ScanlineY>="0111001100" and ScanlineY<"0111100000" )or (ScanlineX>="1000011100" and ScanlineX<"1010000000")
+						else "110000" when sample_array(posy,posx)=1
+						else "001100" when sample_array(posy,posx)=2
+						else "111111";
 	ColorOut <= ColorOutput;
 	
 	SquareXmax <= "1010000000"-SquareWidth; -- (640 - SquareWidth)

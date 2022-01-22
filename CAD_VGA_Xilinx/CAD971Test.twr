@@ -32,32 +32,27 @@ Data Sheet report:
 -----------------
 All values displayed in nanoseconds (ns)
 
+Setup/Hold to clock CLOCK_24
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+RESET_N     |    4.441(R)|      SLOW  |   -1.216(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
 Clock CLOCK_24 to Pad
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-VGA_B<0>    |        18.882(R)|      SLOW  |         4.581(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_B<1>    |        19.109(R)|      SLOW  |         4.917(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_G<0>    |        19.692(R)|      SLOW  |         5.005(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_G<1>    |        19.074(R)|      SLOW  |         4.645(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_HS      |        10.318(R)|      SLOW  |         4.010(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_R<0>    |        19.489(R)|      SLOW  |         4.909(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_R<1>    |        19.245(R)|      SLOW  |         4.771(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_VS      |        11.169(R)|      SLOW  |         3.965(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-------------+-----------------+------------+-----------------+------------+------------------+--------+
-
-Clock RESET_N to Pad
-------------+-----------------+------------+-----------------+------------+------------------+--------+
-            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
-Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
-------------+-----------------+------------+-----------------+------------+------------------+--------+
-VGA_B<0>    |        17.876(R)|      SLOW  |         5.328(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-VGA_B<1>    |        18.103(R)|      SLOW  |         5.548(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-VGA_G<0>    |        18.686(R)|      SLOW  |         5.984(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-VGA_G<1>    |        18.068(R)|      SLOW  |         5.624(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-VGA_R<0>    |        18.483(R)|      SLOW  |         5.888(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-VGA_R<1>    |        18.239(R)|      SLOW  |         5.750(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
+VGA_B<0>    |        16.529(R)|      SLOW  |         4.347(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_B<1>    |        16.644(R)|      SLOW  |         4.370(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_G<0>    |        17.118(R)|      SLOW  |         4.521(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_G<1>    |        16.633(R)|      SLOW  |         4.324(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_HS      |        10.574(R)|      SLOW  |         4.059(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_R<0>    |        16.699(R)|      SLOW  |         4.513(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_R<1>    |        16.949(R)|      SLOW  |         4.393(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_VS      |        10.567(R)|      SLOW  |         3.938(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock CLOCK_24
@@ -65,12 +60,11 @@ Clock to Setup on destination clock CLOCK_24
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLOCK_24       |    4.941|         |         |         |
-RESET_N        |    6.412|    5.025|         |         |
+CLOCK_24       |    3.979|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Sat Jan 22 02:11:27 2022 
+Analysis completed Sat Jan 22 19:20:33 2022 
 --------------------------------------------------------------------------------
 
 Trace Settings:
