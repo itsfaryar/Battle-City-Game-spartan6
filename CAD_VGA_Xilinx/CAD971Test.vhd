@@ -45,10 +45,11 @@ end component;
 Component VGA_Square
 	port ( CLK_24MHz		: in std_logic;
 			RESET				: in std_logic;
-			ColorOut			: out std_logic_vector(5 downto 0); -- RED & GREEN & BLUE
-			SQUAREWIDTH		: in std_logic_vector(7 downto 0);
+			ColorOut			: out std_logic_vector(5 downto 0); -- RED & GREEN & BLU
 			ScanlineX		: in std_logic_vector(10 downto 0);
-			ScanlineY		: in std_logic_vector(10 downto 0)
+			ScanlineY		: in std_logic_vector(10 downto 0);
+			Key 				: in std_logic_vector(3 downto 0);
+			SW 				: in std_logic_vector(7 downto 0)
   );
 end component;
 
@@ -78,9 +79,10 @@ begin
 				CLK_24MHz		=> CLOCK_24,
 				RESET				=> not RESET_N,
 				ColorOut			=> ColorTable,
-				SQUAREWIDTH		=> "00011001",
 				ScanlineX		=> ScanlineX,
-				ScanlineY		=> ScanlineY
+				ScanlineY		=> ScanlineY,
+				key            => key,
+				sw             => sw
 			);
 	 
 

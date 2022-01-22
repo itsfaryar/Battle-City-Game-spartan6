@@ -8,9 +8,11 @@ entity VGA_Square is
   port ( CLK_24MHz		: in std_logic;
 			RESET				: in std_logic;
 			ColorOut			: out std_logic_vector(5 downto 0); -- RED & GREEN & BLUE
-			SQUAREWIDTH		: in std_logic_vector(7 downto 0);
 			ScanlineX		: in std_logic_vector(10 downto 0);
-			ScanlineY		: in std_logic_vector(10 downto 0)
+			ScanlineY		: in std_logic_vector(10 downto 0);
+			Key 				: in std_logic_vector(3 downto 0);
+			SW 				: in std_logic_vector(7 downto 0)
+			
   );
 end VGA_Square;
 
@@ -62,53 +64,33 @@ architecture Behavioral of VGA_Square is
 
 begin
 	
-	ground(0,0)<=BRICK;
-	ground(0,1)<=BRICK;
-	ground(1,1)<=BRICK;
-	ground(9,9)<=BRICK;
-	ground(10,3)<=PLAYER;
-	pl_posx<=10;
-	pl_posy<=6;
+	
+	
+	
 	PrescalerCounter: process(CLK_24MHz, RESET)
 	begin
 		if RESET = '1' then
 			Prescaler <= (others => '0');
+			pl_posx<=10;
+			pl_posy<=6;
+			ground(0,0)<=BRICK;
+			ground(0,1)<=BRICK;
+			ground(1,1)<=BRICK;
+			ground(9,9)<=BRICK;
 		elsif rising_edge(CLK_24MHz) then
 			Prescaler <= Prescaler + 1;	 
+			--if Prescaler = "11000011010100000" then  -- Activated every 0,002 sec (2 msec)
 			if Prescaler = "11000011010100000" then  -- Activated every 0,002 sec (2 msec)
-				
+				 if key(0)='0' then
+					if pl_posx>0 then
+						pl_posx<=pl_posx-1;
+					end if;
+				end if;
 			end if;
 		end if;
 	end process PrescalerCounter; 
-	
-	
-	
---	positionx: process(ScanlineX)
---	begin
---		if ScanlineX>="0000000000" and ScanlineX<"0000110000" then
---			posx<=0;
---		elsif ScanlineX>="0011000000" and ScanlineX<"001100000" then
---			posx<=1;
---		else
---			posx <= 2;
---		end if;
---		
---	end process positionx; 
---	positiony: process(ScanlineY)
---	begin
---		if ScanlineY>="0000000000" and ScanlineY<"0000110000" then
---			posy<=0;
---		elsif ScanlineY>="0011000000" and ScanlineY<"001100000" then
---			posy<=1;
---		else
---			posy <= 2;
---		end if;
---		
---	end process positiony; 
---	ColorOutput <=		"110000" when ColorSelect(0) = '1' AND ScanlineX >= SquareX AND ScanlineY >= SquareY AND ScanlineX < SquareX+SquareWidth AND ScanlineY < SquareY+SquareWidth 
---					else	"001100" when ColorSelect(1) = '1' AND ScanlineX >= SquareX AND ScanlineY >= SquareY AND ScanlineX < SquareX+SquareWidth AND ScanlineY < SquareY+SquareWidth 
---					else	"000011" when ColorSelect(2) = '1' AND ScanlineX >= SquareX AND ScanlineY >= SquareY AND ScanlineX < SquareX+SquareWidth AND ScanlineY < SquareY+SquareWidth 
---					else	"111110";
+
+
 	posx <= 0 when ScanlineX>=conv_std_logic_vector(100,10) and ScanlineX<conv_std_logic_vector(122,10)
 				else 1 when ScanlineX>=conv_std_logic_vector(122,10) and ScanlineX<conv_std_logic_vector(144,10)
 				else 2 when ScanlineX>=conv_std_logic_vector(144,10) and ScanlineX<conv_std_logic_vector(166,10)
@@ -154,32 +136,33 @@ begin
 				else 19 when ScanlineY>=conv_std_logic_vector(438,10) and ScanlineY<conv_std_logic_vector(460,10);
 				
 
---	ColorOutput <= "101010" when (ScanlineY>="0000000000" and ScanlineY<"0000010100") or (ScanlineX>="0000000000" and ScanlineX<"0001100100") or (ScanlineY>="0111001100" and ScanlineY<"0111100000" )or (ScanlineX>="1000011100" and ScanlineX<"1010000000")
---						else "000000" when ground(posy,posx)=EMPTY
---						else "110000" when ground(posy,posx)=BRICK
---						else "111111";
+	ColorOutput <= "101010" when (ScanlineY>="0000000000" and ScanlineY<"0000010100") or (ScanlineX>="0000000000" and ScanlineX<"0001100100") or (ScanlineY>="0111001100" and ScanlineY<"0111100000" )or (ScanlineX>="1000011100" and ScanlineX<"1010000000")
+						--else "100101" when pl_posx=posx and pl_posy=posy and tank(CONV_INTEGER(ScanlineY-conv_std_logic_vector(startPositionsY(posy),10)),CONV_INTEGER(ScanlineX-conv_std_logic_vector(startPositionsX(posx),10)))='1'
+						else "100101" when pl_posx=posx and pl_posy=posy
+						else "000000" when ground(posy,posx)=EMPTY
+						else "110000" when ground(posy,posx)=BRICK
+						else "111111";
 	
-	ColorProcess: process(ScanlineX,ScanlineY)
-	begin
-		if (ScanlineY>="0000000000" and ScanlineY<"0000010100") or (ScanlineX>="0000000000" and ScanlineX<"0001100100") or (ScanlineY>="0111001100" and ScanlineY<"0111100000" )or (ScanlineX>="1000011100" and ScanlineX<"1010000000") then
-			ColorOutput <= "101010";
-		elsif ground(posy,posx)=EMPTY then
-			ColorOutput <= "000000";
-		elsif ground(posy,posx)=BRICK then
-			ColorOutput <= "011000";
-		else
-			ColorOutput <= "000000";
-		end if;
-		if pl_posx=posx and pl_posy=posy then
-			--if tank(CONV_INTEGER(ScanlineY-std_logic_vector((to_unsigned(posy,10)* "0000010110"))-"0000010100"),CONV_INTEGER(ScanlineX-std_logic_vector((to_unsigned(posx,10)* "0000010110"))-"0001100100"))='1' then
-			if tank(CONV_INTEGER(ScanlineY-conv_std_logic_vector(startPositionsY(posy),10)),CONV_INTEGER(ScanlineX-conv_std_logic_vector(startPositionsX(posx),10)))='1' then
-				ColorOutput <= "100101";
-			end if;
-		end if;
-	end process ColorProcess; 
+	
+--	ColorProcess: process(ScanlineX,ScanlineY)
+--	begin
+--		if (ScanlineY>="0000000000" and ScanlineY<"0000010100") or (ScanlineX>="0000000000" and ScanlineX<"0001100100") or (ScanlineY>="0111001100" and ScanlineY<"0111100000" )or (ScanlineX>="1000011100" and ScanlineX<"1010000000") then
+--			ColorOutput <= "101010";
+--		elsif ground(posy,posx)=EMPTY then
+--			ColorOutput <= "000000";
+--		elsif ground(posy,posx)=BRICK then
+--			ColorOutput <= "011000";
+--		else
+--			ColorOutput <= "000000";
+--		end if;
+--		if pl_posx=posx and pl_posy=posy then
+--			--if tank(CONV_INTEGER(ScanlineY-std_logic_vector((to_unsigned(posy,10)* "0000010110"))-"0000010100"),CONV_INTEGER(ScanlineX-std_logic_vector((to_unsigned(posx,10)* "0000010110"))-"0001100100"))='1' then
+--			if tank(CONV_INTEGER(ScanlineY-conv_std_logic_vector(startPositionsY(posy),10)),CONV_INTEGER(ScanlineX-conv_std_logic_vector(startPositionsX(posx),10)))='1' then
+--				ColorOutput <= "100101";
+--			end if;
+--		end if;
+--	end process ColorProcess; 
 	ColorOut <= ColorOutput;
-	
-	SquareXmax <= "1010000000"-SquareWidth; -- (640 - SquareWidth)
-	SquareYmax <= "0111100000"-SquareWidth;	-- (480 - SquareWidth)
+
 end Behavioral;
 
