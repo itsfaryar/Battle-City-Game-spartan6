@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.64 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.64 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Reading design: CAD971Test.prj
 
@@ -126,7 +126,7 @@ Elaborating entity <CAD971Test> (architecture <CAD971Test>) from library <work>.
 Elaborating entity <VGA_controller> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <VGA_Square> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:634 - "D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\VGA_Square.vhd" Line 26: Net <ground[0][2][2]> does not have a driver.
+WARNING:HDLCompiler:634 - "D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\VGA_Square.vhd" Line 27: Net <ground[0][2][2]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -144,8 +144,8 @@ Synthesizing Unit <VGA_controller>.
     Found 11-bit register for signal <CurrentHPos>.
     Found 11-bit adder for signal <CurrentHPos[10]_GND_6_o_add_1_OUT> created at line 48.
     Found 11-bit adder for signal <CurrentVPos[10]_GND_6_o_add_3_OUT> created at line 51.
-    Found 11-bit subtractor for signal <GND_6_o_GND_6_o_sub_20_OUT<10:0>> created at line 79.
     Found 11-bit subtractor for signal <GND_6_o_GND_6_o_sub_17_OUT<10:0>> created at line 76.
+    Found 11-bit subtractor for signal <GND_6_o_GND_6_o_sub_20_OUT<10:0>> created at line 79.
     Found 11-bit comparator greater for signal <CurrentHPos[10]_GND_6_o_LessThan_1_o> created at line 47
     Found 11-bit comparator greater for signal <CurrentVPos[10]_GND_6_o_LessThan_3_o> created at line 50
     Found 11-bit comparator lessequal for signal <CurrentHPos[10]_GND_6_o_LessThan_10_o> created at line 61
@@ -163,7 +163,6 @@ Unit <VGA_controller> synthesized.
 
 Synthesizing Unit <VGA_Square>.
     Related source file is "D:\Battle-City-Game-spartan6\CAD_VGA_Xilinx\VGA_Square.vhd".
-WARNING:Xst:647 - Input <Key<3:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <SW> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:2935 - Signal 'ground<0><2>', unconnected in block 'VGA_Square', is tied to its initial value (001).
 WARNING:Xst:2935 - Signal 'ground<0><3>', unconnected in block 'VGA_Square', is tied to its initial value (001).
@@ -561,16 +560,21 @@ WARNING:Xst:2935 - Signal 'ground<19><16>', unconnected in block 'VGA_Square', i
 WARNING:Xst:2935 - Signal 'ground<19><17>', unconnected in block 'VGA_Square', is tied to its initial value (001).
 WARNING:Xst:2935 - Signal 'ground<19><18>', unconnected in block 'VGA_Square', is tied to its initial value (001).
 WARNING:Xst:2935 - Signal 'ground<19><19>', unconnected in block 'VGA_Square', is tied to its initial value (001).
+    Found 32-bit register for signal <pl_posy>.
+    Found 2-bit register for signal <player_dir>.
     Found 31-bit register for signal <Prescaler>.
     Found 32-bit register for signal <pl_posx>.
-    Found 31-bit adder for signal <Prescaler[30]_GND_8_o_add_0_OUT> created at line 81.
-    Found 32-bit subtractor for signal <pl_posx[31]_GND_8_o_sub_4_OUT<31:0>> created at line 86.
-    Found 5-bit subtractor for signal <GND_8_o_GND_8_o_sub_145_OUT<4:0>> created at line 142.
-    Found 5-bit subtractor for signal <GND_8_o_GND_8_o_sub_148_OUT<4:0>> created at line 142.
-    Found 32x9-bit Read Only RAM for signal <posy[4]_X_8_o_wide_mux_143_OUT>
-    Found 32x10-bit Read Only RAM for signal <posx[4]_X_8_o_wide_mux_146_OUT>
-    Found 32x3-bit Read Only RAM for signal <_n0739>
-WARNING:Xst:737 - Found 1-bit latch for signal <pl_posy<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 31-bit adder for signal <Prescaler[30]_GND_8_o_add_0_OUT> created at line 151.
+    Found 32-bit adder for signal <pl_posy[31]_GND_8_o_add_7_OUT> created at line 163.
+    Found 32-bit adder for signal <pl_posx[31]_GND_8_o_add_11_OUT> created at line 170.
+    Found 32-bit subtractor for signal <pl_posy[31]_GND_8_o_sub_4_OUT<31:0>> created at line 156.
+    Found 32-bit subtractor for signal <pl_posx[31]_GND_8_o_sub_16_OUT<31:0>> created at line 177.
+    Found 5-bit subtractor for signal <GND_8_o_GND_8_o_sub_198_OUT<4:0>> created at line 240.
+    Found 5-bit subtractor for signal <GND_8_o_GND_8_o_sub_201_OUT<4:0>> created at line 240.
+    Found 32x9-bit Read Only RAM for signal <posy[4]_X_8_o_wide_mux_196_OUT>
+    Found 32x10-bit Read Only RAM for signal <posx[4]_X_8_o_wide_mux_199_OUT>
+    Found 32x9-bit Read Only RAM for signal <_n0895>
+WARNING:Xst:737 - Found 1-bit latch for signal <ground<0><0><1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <posx<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <posx<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <posx<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -581,60 +585,63 @@ WARNING:Xst:737 - Found 1-bit latch for signal <posy<3>>. Latches may be generat
 WARNING:Xst:737 - Found 1-bit latch for signal <posy<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <posy<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <posy<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 32-bit comparator lessequal for signal <pl_posx[31]_GND_8_o_LessThan_3_o> created at line 85
-    Found 11-bit comparator greater for signal <n0053> created at line 96
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_17_o> created at line 96
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_19_o> created at line 97
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_21_o> created at line 98
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_23_o> created at line 99
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_25_o> created at line 100
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_27_o> created at line 101
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_29_o> created at line 102
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_31_o> created at line 103
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_33_o> created at line 104
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_35_o> created at line 105
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_37_o> created at line 106
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_39_o> created at line 107
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_41_o> created at line 108
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_43_o> created at line 109
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_45_o> created at line 110
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_47_o> created at line 111
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_49_o> created at line 112
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_51_o> created at line 113
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_53_o> created at line 114
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_55_o> created at line 115
-    Found 11-bit comparator greater for signal <n0237> created at line 119
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_77_o> created at line 119
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_79_o> created at line 120
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_81_o> created at line 121
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_83_o> created at line 122
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_85_o> created at line 123
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_87_o> created at line 124
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_89_o> created at line 125
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_91_o> created at line 126
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_93_o> created at line 127
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_95_o> created at line 128
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_97_o> created at line 129
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_99_o> created at line 130
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_101_o> created at line 131
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_103_o> created at line 132
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_105_o> created at line 133
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_107_o> created at line 134
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_109_o> created at line 135
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_111_o> created at line 136
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_113_o> created at line 137
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_115_o> created at line 138
-    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_139_o> created at line 141
-    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_141_o> created at line 141
-    Found 32-bit comparator equal for signal <posx[31]_pl_posx[31]_equal_142_o> created at line 142
-    Found 5-bit comparator equal for signal <posy[31]_pl_posy[31]_equal_143_o> created at line 142
+    Found 32-bit comparator greater for signal <pl_posy[31]_GND_8_o_LessThan_3_o> created at line 155
+    Found 32-bit comparator greater for signal <GND_8_o_pl_posy[31]_LessThan_7_o> created at line 162
+    Found 32-bit comparator greater for signal <GND_8_o_pl_posx[31]_LessThan_11_o> created at line 169
+    Found 32-bit comparator greater for signal <pl_posx[31]_GND_8_o_LessThan_15_o> created at line 176
+    Found 11-bit comparator greater for signal <n0050> created at line 191
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_42_o> created at line 191
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_44_o> created at line 192
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_46_o> created at line 193
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_48_o> created at line 194
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_50_o> created at line 195
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_52_o> created at line 196
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_54_o> created at line 197
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_56_o> created at line 198
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_58_o> created at line 199
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_60_o> created at line 200
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_62_o> created at line 201
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_64_o> created at line 202
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_66_o> created at line 203
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_68_o> created at line 204
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_70_o> created at line 205
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_72_o> created at line 206
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_74_o> created at line 207
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_76_o> created at line 208
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_78_o> created at line 209
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_80_o> created at line 210
+    Found 11-bit comparator greater for signal <n0234> created at line 214
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_102_o> created at line 214
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_104_o> created at line 215
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_106_o> created at line 216
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_108_o> created at line 217
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_110_o> created at line 218
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_112_o> created at line 219
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_114_o> created at line 220
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_116_o> created at line 221
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_118_o> created at line 222
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_120_o> created at line 223
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_122_o> created at line 224
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_124_o> created at line 225
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_126_o> created at line 226
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_128_o> created at line 227
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_130_o> created at line 228
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_132_o> created at line 229
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_134_o> created at line 230
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_136_o> created at line 231
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_138_o> created at line 232
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_140_o> created at line 233
+    Found 11-bit comparator greater for signal <ScanlineY[10]_GND_8_o_LessThan_164_o> created at line 236
+    Found 11-bit comparator greater for signal <ScanlineX[10]_GND_8_o_LessThan_166_o> created at line 236
+    Found 32-bit comparator equal for signal <posx[31]_pl_posx[31]_equal_195_o> created at line 240
+    Found 32-bit comparator equal for signal <posy[31]_pl_posy[31]_equal_196_o> created at line 240
     Summary:
 	inferred   3 RAM(s).
-	inferred   4 Adder/Subtractor(s).
-	inferred  63 D-type flip-flop(s).
+	inferred   5 Adder/Subtractor(s).
+	inferred  97 D-type flip-flop(s).
 	inferred  11 Latch(s).
-	inferred  47 Comparator(s).
-	inferred 167 Multiplexer(s).
+	inferred  50 Comparator(s).
+	inferred 182 Multiplexer(s).
 Unit <VGA_Square> synthesized.
 
 =========================================================================
@@ -643,33 +650,32 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 3
  32x10-bit single-port Read Only RAM                   : 1
- 32x3-bit single-port Read Only RAM                    : 1
- 32x9-bit single-port Read Only RAM                    : 1
-# Adders/Subtractors                                   : 8
+ 32x9-bit single-port Read Only RAM                    : 2
+# Adders/Subtractors                                   : 9
  11-bit adder                                          : 2
  11-bit subtractor                                     : 2
  31-bit adder                                          : 1
- 32-bit subtractor                                     : 1
+ 32-bit addsub                                         : 2
  5-bit subtractor                                      : 2
-# Registers                                            : 4
+# Registers                                            : 6
  11-bit register                                       : 2
+ 2-bit register                                        : 1
  31-bit register                                       : 1
- 32-bit register                                       : 1
+ 32-bit register                                       : 2
 # Latches                                              : 11
  1-bit latch                                           : 11
-# Comparators                                          : 55
+# Comparators                                          : 58
  11-bit comparator greater                             : 48
  11-bit comparator lessequal                           : 4
- 32-bit comparator equal                               : 1
- 32-bit comparator lessequal                           : 1
- 5-bit comparator equal                                : 1
-# Multiplexers                                         : 174
- 1-bit 2-to-1 multiplexer                              : 157
+ 32-bit comparator equal                               : 2
+ 32-bit comparator greater                             : 4
+# Multiplexers                                         : 189
+ 1-bit 2-to-1 multiplexer                              : 166
  11-bit 2-to-1 multiplexer                             : 4
- 2-bit 2-to-1 multiplexer                              : 3
+ 2-bit 2-to-1 multiplexer                              : 6
  3-bit 2-to-1 multiplexer                              : 6
  31-bit 2-to-1 multiplexer                             : 1
- 6-bit 2-to-1 multiplexer                              : 3
+ 6-bit 2-to-1 multiplexer                              : 6
 
 =========================================================================
 
@@ -679,20 +685,21 @@ Macro Statistics
 
 
 Synthesizing (advanced) Unit <VGA_Square>.
-The following registers are absorbed into counter <pl_posx>: 1 register on signal <pl_posx>.
 The following registers are absorbed into counter <Prescaler>: 1 register on signal <Prescaler>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0739> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+The following registers are absorbed into counter <pl_posy>: 1 register on signal <pl_posy>.
+The following registers are absorbed into counter <pl_posx>: 1 register on signal <pl_posx>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0895> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 32-word x 3-bit                     |          |
+    |     aspect ratio   | 32-word x 9-bit                     |          |
     |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <GND_8_o_GND_8_o_sub_145_OUT> |          |
+    |     addrA          | connected to signal <GND_8_o_GND_8_o_sub_198_OUT> |          |
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_posx[4]_X_8_o_wide_mux_146_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_posx[4]_X_8_o_wide_mux_199_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -703,14 +710,14 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_posx[4]_X_8_o_wide_mux_146_OUT> will
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_posy[4]_X_8_o_wide_mux_143_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_posy[4]_X_8_o_wide_mux_196_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
     |     aspect ratio   | 32-word x 9-bit                     |          |
     |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <posy<4:0>>     |          |
+    |     addrA          | connected to signal <posy>          |          |
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
@@ -727,27 +734,27 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 3
  32x10-bit single-port distributed Read Only RAM       : 1
- 32x3-bit single-port distributed Read Only RAM        : 1
- 32x9-bit single-port distributed Read Only RAM        : 1
+ 32x9-bit single-port distributed Read Only RAM        : 2
 # Adders/Subtractors                                   : 4
  11-bit subtractor                                     : 2
  5-bit subtractor                                      : 2
-# Counters                                             : 4
+# Counters                                             : 5
  11-bit up counter                                     : 2
  31-bit up counter                                     : 1
- 32-bit down counter                                   : 1
-# Comparators                                          : 55
+ 32-bit updown counter                                 : 2
+# Registers                                            : 2
+ Flip-Flops                                            : 2
+# Comparators                                          : 58
  11-bit comparator greater                             : 48
  11-bit comparator lessequal                           : 4
- 32-bit comparator equal                               : 1
- 32-bit comparator lessequal                           : 1
- 5-bit comparator equal                                : 1
-# Multiplexers                                         : 169
- 1-bit 2-to-1 multiplexer                              : 155
+ 32-bit comparator equal                               : 2
+ 32-bit comparator greater                             : 4
+# Multiplexers                                         : 186
+ 1-bit 2-to-1 multiplexer                              : 166
  11-bit 2-to-1 multiplexer                             : 2
- 2-bit 2-to-1 multiplexer                              : 3
+ 2-bit 2-to-1 multiplexer                              : 6
  3-bit 2-to-1 multiplexer                              : 6
- 6-bit 2-to-1 multiplexer                              : 3
+ 6-bit 2-to-1 multiplexer                              : 6
 
 =========================================================================
 
@@ -778,21 +785,23 @@ WARNING:Xst:3002 - This design contains one or more registers/latches that are d
 
   List of register instances with asynchronous set and reset:
     posy_0 in unit <VGA_Square>
+    posy_1 in unit <VGA_Square>
     posy_2 in unit <VGA_Square>
     posy_3 in unit <VGA_Square>
-    posy_1 in unit <VGA_Square>
     posy_4 in unit <VGA_Square>
     posx_0 in unit <VGA_Square>
     posx_1 in unit <VGA_Square>
     posx_2 in unit <VGA_Square>
-    posx_4 in unit <VGA_Square>
     posx_3 in unit <VGA_Square>
+    posx_4 in unit <VGA_Square>
 
 
   List of register instances with asynchronous set or reset and opposite initialization value:
+    pl_posy_1 in unit <VGA_Square>
+    pl_posy_2 in unit <VGA_Square>
     pl_posx_3 in unit <VGA_Square>
     pl_posx_1 in unit <VGA_Square>
-    pl_posy_2 in unit <VGA_Square>
+    ground<0><0>_1 in unit <VGA_Square>
 
 
 Optimizing unit <CAD971Test> ...
@@ -800,50 +809,75 @@ Optimizing unit <CAD971Test> ...
 Optimizing unit <VGA_Square> ...
 
 Optimizing unit <VGA_controller> ...
-WARNING:Xst:1293 - FF/Latch <VGA_SQ/pl_posx_12> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <VGA_SQ/Prescaler_25> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/Prescaler_24> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_31> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_30> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_29> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_28> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_27> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_26> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_25> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_24> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_22> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_21> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_23> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_20> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_19> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_17> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_16> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_18> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_15> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_14> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_12> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_11> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_13> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_10> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_9> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_8> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_7> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_6> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_5> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_4> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_Control/CurrentVPos_10> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_Control/CurrentHPos_10> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_31> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_30> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_29> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_28> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_27> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_26> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_24> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_23> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_25> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_22> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_21> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_20> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_19> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_18> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_17> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_15> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_14> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_16> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_13> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_12> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_11> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_10> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_9> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_8> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_6> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_5> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posy_7> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/Prescaler_30> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/Prescaler_29> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/Prescaler_28> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/Prescaler_27> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/Prescaler_26> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/Prescaler_25> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/Prescaler_24> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_Control/CurrentVPos_10> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_Control/CurrentHPos_10> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_30> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_29> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_31> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_28> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_27> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_26> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_25> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_24> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_23> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_22> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_21> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_20> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_19> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_18> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_17> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_16> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_15> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_14> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <VGA_SQ/pl_posx_13> has a constant value of 0 in block <CAD971Test>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block CAD971Test, actual ratio is 7.
-WARNING:Xst:1426 - The value init of the FF/Latch VGA_SQ/pl_posx_3_LD hinder the constant cleaning in the block CAD971Test.
+Found area constraint ratio of 100 (+ 5) on block CAD971Test, actual ratio is 9.
+WARNING:Xst:1426 - The value init of the FF/Latch VGA_SQ/pl_posy_1_LD hinder the constant cleaning in the block CAD971Test.
    You should achieve better results by setting this init to 1.
-FlipFlop VGA_Control/CurrentVPos_2 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -851,8 +885,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 51
- Flip-Flops                                            : 51
+# Registers                                            : 60
+ Flip-Flops                                            : 60
 
 =========================================================================
 
@@ -875,30 +909,29 @@ Top Level Output File Name         : CAD971Test.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 399
+# BELS                             : 513
 #      GND                         : 1
 #      INV                         : 4
-#      LUT1                        : 24
-#      LUT2                        : 13
-#      LUT3                        : 25
-#      LUT4                        : 18
-#      LUT5                        : 64
-#      LUT6                        : 139
-#      MUXCY                       : 58
-#      MUXF7                       : 4
+#      LUT1                        : 23
+#      LUT2                        : 35
+#      LUT3                        : 30
+#      LUT4                        : 32
+#      LUT5                        : 84
+#      LUT6                        : 158
+#      MUXCY                       : 91
 #      VCC                         : 1
-#      XORCY                       : 48
-# FlipFlops/Latches                : 63
+#      XORCY                       : 54
+# FlipFlops/Latches                : 72
 #      FDC                         : 34
-#      FDCE                        : 13
-#      FDE                         : 2
-#      FDPE                        : 2
+#      FDCE                        : 17
+#      FDE                         : 4
+#      FDPE                        : 5
 #      LD                          : 12
 # Clock Buffers                    : 2
 #      BUFG                        : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 10
-#      IBUF                        : 2
+# IO Buffers                       : 13
+#      IBUF                        : 5
 #      OBUF                        : 8
 
 Device utilization summary:
@@ -908,20 +941,20 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              63  out of  11440     0%  
- Number of Slice LUTs:                  287  out of   5720     5%  
-    Number used as Logic:               287  out of   5720     5%  
+ Number of Slice Registers:              72  out of  11440     0%  
+ Number of Slice LUTs:                  366  out of   5720     6%  
+    Number used as Logic:               366  out of   5720     6%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    289
-   Number with an unused Flip Flop:     226  out of    289    78%  
-   Number with an unused LUT:             2  out of    289     0%  
-   Number of fully used LUT-FF pairs:    61  out of    289    21%  
-   Number of unique control sets:        13
+ Number of LUT Flip Flop pairs used:    367
+   Number with an unused Flip Flop:     295  out of    367    80%  
+   Number with an unused LUT:             1  out of    367     0%  
+   Number of fully used LUT-FF pairs:    71  out of    367    19%  
+   Number of unique control sets:         9
 
 IO Utilization: 
  Number of IOs:                          22
- Number of bonded IOBs:                  11  out of    102    10%  
+ Number of bonded IOBs:                  14  out of    102    13%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
@@ -947,17 +980,14 @@ Clock Information:
 -------------------------------------------------------------------+------------------------+-------+
 Clock Signal                                                       | Clock buffer(FF name)  | Load  |
 -------------------------------------------------------------------+------------------------+-------+
-CLOCK_24                                                           | BUFGP                  | 51    |
+CLOCK_24                                                           | BUFGP                  | 60    |
 RESET_N                                                            | IBUF+BUFG              | 2     |
-VGA_SQ/GND_8_o_GND_8_o_OR_658_o(VGA_SQ/GND_8_o_GND_8_o_OR_658_o4:O)| NONE(*)(VGA_SQ/posy_0) | 4     |
+VGA_SQ/GND_8_o_GND_8_o_OR_658_o(VGA_SQ/GND_8_o_GND_8_o_OR_658_o5:O)| NONE(*)(VGA_SQ/posy_0) | 4     |
 VGA_SQ/posy_2_G(VGA_SQ/posy_2_G:O)                                 | NONE(*)(VGA_SQ/posy_2) | 1     |
-VGA_SQ/posx_0_G(VGA_SQ/posx_0_G:O)                                 | NONE(*)(VGA_SQ/posx_0) | 1     |
-VGA_SQ/posx_1_G(VGA_SQ/posx_1_G:O)                                 | NONE(*)(VGA_SQ/posx_1) | 1     |
+VGA_SQ/GND_8_o_GND_8_o_OR_50_o(VGA_SQ/GND_8_o_GND_8_o_OR_50_o5:O)  | NONE(*)(VGA_SQ/posx_0) | 4     |
 VGA_SQ/posx_2_G(VGA_SQ/posx_2_G:O)                                 | NONE(*)(VGA_SQ/posx_2) | 1     |
-VGA_SQ/posx_4_G(VGA_SQ/posx_4_G:O)                                 | NONE(*)(VGA_SQ/posx_4) | 1     |
-VGA_SQ/posx_3_G(VGA_SQ/posx_3_G:O)                                 | NONE(*)(VGA_SQ/posx_3) | 1     |
 -------------------------------------------------------------------+------------------------+-------+
-(*) These 7 clock signal(s) are generated by combinatorial logic,
+(*) These 4 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -970,9 +1000,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 4.566ns (Maximum Frequency: 219.010MHz)
-   Minimum input arrival time before clock: 4.543ns
-   Maximum output required time after clock: 18.892ns
+   Minimum period: 5.758ns (Maximum Frequency: 173.686MHz)
+   Minimum input arrival time before clock: 5.295ns
+   Maximum output required time after clock: 20.022ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -981,302 +1011,247 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLOCK_24'
-  Clock period: 4.566ns (frequency: 219.010MHz)
-  Total number of paths / destination ports: 2277 / 68
+  Clock period: 5.758ns (frequency: 173.686MHz)
+  Total number of paths / destination ports: 3042 / 86
 -------------------------------------------------------------------------
-Delay:               4.566ns (Levels of Logic = 2)
-  Source:            VGA_Control/CurrentHPos_4 (FF)
-  Destination:       VGA_Control/CurrentVPos_9 (FF)
+Delay:               5.758ns (Levels of Logic = 11)
+  Source:            VGA_SQ/pl_posy_2_C_2 (FF)
+  Destination:       VGA_SQ/player_dir_0 (FF)
   Source Clock:      CLOCK_24 rising
   Destination Clock: CLOCK_24 rising
 
-  Data Path: VGA_Control/CurrentHPos_4 to VGA_Control/CurrentVPos_9
+  Data Path: VGA_SQ/pl_posy_2_C_2 to VGA_SQ/player_dir_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             11   0.525   1.267  VGA_Control/CurrentHPos_4 (VGA_Control/CurrentHPos_4)
-     LUT5:I2->O            9   0.235   0.976  VGA_Control/CurrentHPos[10]_GND_6_o_LessThan_1_o_inv_inv1_SW0 (N22)
-     LUT6:I5->O           10   0.254   1.007  VGA_Control/CurrentHPos[10]_GND_6_o_LessThan_1_o_inv1 (VGA_Control/CurrentHPos[10]_GND_6_o_LessThan_1_o_inv)
-     FDCE:CE                   0.302          VGA_Control/CurrentVPos_1
+     FDE:C->Q              3   0.525   0.874  VGA_SQ/pl_posy_2_C_2 (VGA_SQ/pl_posy_2_C_2)
+     LUT3:I1->O            4   0.250   1.080  VGA_SQ/pl_posy_21 (VGA_SQ/pl_posy_2)
+     LUT5:I1->O            1   0.254   0.000  VGA_SQ/Mcompar_GND_8_o_pl_posy[31]_LessThan_7_o_lut<0> (VGA_SQ/Mcompar_GND_8_o_pl_posy[31]_LessThan_7_o_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  VGA_SQ/Mcompar_GND_8_o_pl_posy[31]_LessThan_7_o_cy<0> (VGA_SQ/Mcompar_GND_8_o_pl_posy[31]_LessThan_7_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_GND_8_o_pl_posy[31]_LessThan_7_o_cy<1> (VGA_SQ/Mcompar_GND_8_o_pl_posy[31]_LessThan_7_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_GND_8_o_pl_posy[31]_LessThan_7_o_cy<2> (VGA_SQ/Mcompar_GND_8_o_pl_posy[31]_LessThan_7_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_GND_8_o_pl_posy[31]_LessThan_7_o_cy<3> (VGA_SQ/Mcompar_GND_8_o_pl_posy[31]_LessThan_7_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_GND_8_o_pl_posy[31]_LessThan_7_o_cy<4> (VGA_SQ/Mcompar_GND_8_o_pl_posy[31]_LessThan_7_o_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_GND_8_o_pl_posy[31]_LessThan_7_o_cy<5> (VGA_SQ/Mcompar_GND_8_o_pl_posy[31]_LessThan_7_o_cy<5>)
+     MUXCY:CI->O           8   0.235   0.944  VGA_SQ/Mcompar_GND_8_o_pl_posy[31]_LessThan_7_o_cy<6> (VGA_SQ/Mcompar_GND_8_o_pl_posy[31]_LessThan_7_o_cy<6>)
+     LUT5:I4->O            1   0.254   0.682  VGA_SQ/Mmux_player_dir[1]_PWR_9_o_mux_23_OUT11 (VGA_SQ/Mmux_player_dir[1]_PWR_9_o_mux_23_OUT1)
+     LUT5:I4->O            1   0.254   0.000  VGA_SQ/player_dir_0_dpot (VGA_SQ/player_dir_0_dpot)
+     FDCE:D                    0.074          VGA_SQ/player_dir_0
     ----------------------------------------
-    Total                      4.566ns (1.316ns logic, 3.250ns route)
-                                       (28.8% logic, 71.2% route)
+    Total                      5.758ns (2.178ns logic, 3.580ns route)
+                                       (37.8% logic, 62.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLOCK_24'
-  Total number of paths / destination ports: 55 / 55
+  Total number of paths / destination ports: 166 / 72
 -------------------------------------------------------------------------
-Offset:              4.543ns (Levels of Logic = 2)
-  Source:            RESET_N (PAD)
+Offset:              5.295ns (Levels of Logic = 4)
+  Source:            Key<0> (PAD)
   Destination:       VGA_SQ/pl_posx_0 (FF)
   Destination Clock: CLOCK_24 rising
 
-  Data Path: RESET_N to VGA_SQ/pl_posx_0
+  Data Path: Key<0> to VGA_SQ/pl_posx_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.328   0.681  RESET_N_IBUF (RESET_N_IBUF)
-     INV:I->O             50   0.255   1.820  RESET_N_IBUF_BUFG_LUT1_INV_0 (RESET_N_IBUF_BUFG_LUT1)
-     FDC:CLR                   0.459          VGA_SQ/Prescaler_0
+     IBUF:I->O            16   1.328   1.290  Key_0_IBUF (Key_0_IBUF)
+     LUT2:I0->O            2   0.250   0.954  VGA_SQ/Mmux_player_dir[1]_PWR_9_o_mux_23_OUT21 (VGA_SQ/player_dir[1]_PWR_9_o_mux_23_OUT<1>)
+     LUT5:I2->O            7   0.235   0.910  VGA_SQ/_n0819_inv1_rstpot (VGA_SQ/_n0819_inv1_rstpot)
+     LUT3:I2->O            1   0.254   0.000  VGA_SQ/pl_posx_4_dpot (VGA_SQ/pl_posx_4_dpot)
+     FDCE:D                    0.074          VGA_SQ/pl_posx_4
     ----------------------------------------
-    Total                      4.543ns (2.042ns logic, 2.501ns route)
-                                       (44.9% logic, 55.1% route)
+    Total                      5.295ns (2.141ns logic, 3.154ns route)
+                                       (40.4% logic, 59.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'RESET_N'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              4.120ns (Levels of Logic = 2)
+Offset:              4.174ns (Levels of Logic = 2)
   Source:            RESET_N (PAD)
-  Destination:       VGA_SQ/pl_posy_2 (LATCH)
+  Destination:       VGA_SQ/ground<0><0>_1 (LATCH)
   Destination Clock: RESET_N rising
 
-  Data Path: RESET_N to VGA_SQ/pl_posy_2
+  Data Path: RESET_N to VGA_SQ/ground<0><0>_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             1   1.328   0.681  RESET_N_IBUF (RESET_N_IBUF)
-     INV:I->O             50   0.255   1.820  RESET_N_IBUF_BUFG_LUT1_INV_0 (RESET_N_IBUF_BUFG_LUT1)
-     LD:D                      0.036          VGA_SQ/pl_posy_2
+     INV:I->O             57   0.255   1.874  RESET_N_IBUF_BUFG_LUT1_INV_0 (RESET_N_IBUF_BUFG_LUT1)
+     LD:D                      0.036          VGA_SQ/ground<0><0>_1
     ----------------------------------------
-    Total                      4.120ns (1.619ns logic, 2.501ns route)
-                                       (39.3% logic, 60.7% route)
+    Total                      4.174ns (1.619ns logic, 2.555ns route)
+                                       (38.8% logic, 61.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLOCK_24'
-  Total number of paths / destination ports: 9208 / 8
+  Total number of paths / destination ports: 34542 / 8
 -------------------------------------------------------------------------
-Offset:              18.892ns (Levels of Logic = 11)
+Offset:              20.022ns (Levels of Logic = 12)
   Source:            VGA_Control/CurrentVPos_3 (FF)
-  Destination:       VGA_R<1> (PAD)
+  Destination:       VGA_G<1> (PAD)
   Source Clock:      CLOCK_24 rising
 
-  Data Path: VGA_Control/CurrentVPos_3 to VGA_R<1>
+  Data Path: VGA_Control/CurrentVPos_3 to VGA_G<1>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            20   0.525   1.286  VGA_Control/CurrentVPos_3 (VGA_Control/CurrentVPos_3)
-     LUT2:I1->O            7   0.254   0.910  VGA_Control/Blank_INV_22_o111 (VGA_Control/Blank_INV_22_o11)
-     LUT6:I5->O           10   0.254   1.008  VGA_Control/Blank_INV_22_o2 (VGA_Control/Blank_INV_22_o2)
-     LUT5:I4->O           65   0.254   2.392  VGA_Control/Blank_INV_22_o3 (VGA_Control/Blank_INV_22_o)
-     LUT6:I0->O           20   0.254   1.716  VGA_Control/Mmux_ScanlineY81 (ScanlineY<6>)
-     LUT5:I0->O            3   0.254   1.221  VGA_SQ/GND_8_o_ScanlineY[10]_AND_26_o21 (VGA_SQ/GND_8_o_ScanlineY[10]_AND_26_o2)
-     LUT6:I0->O            2   0.254   1.156  VGA_SQ/n023711 (VGA_SQ/n0237)
-     LUT5:I0->O            1   0.254   1.137  VGA_SQ/ScanlineY[10]_GND_8_o_OR_1250_o5_SW0 (N48)
-     LUT6:I0->O            2   0.254   0.726  VGA_SQ/ScanlineY[10]_GND_8_o_OR_1250_o5 (ColorTable<1>)
-     LUT5:I4->O            1   0.254   0.682  VGA_Control/Mmux_RED22 (VGA_Control/Mmux_RED21)
-     LUT3:I2->O            1   0.254   0.681  VGA_Control/Mmux_RED23 (VGA_R_1_OBUF)
-     OBUF:I->O                 2.912          VGA_R_1_OBUF (VGA_R<1>)
+     FDCE:C->Q            19   0.525   1.369  VGA_Control/CurrentVPos_3 (VGA_Control/CurrentVPos_3)
+     LUT2:I0->O            3   0.250   0.766  VGA_Control/Blank_INV_22_o111 (VGA_Control/Blank_INV_22_o11)
+     LUT6:I5->O           11   0.254   1.039  VGA_Control/Blank_INV_22_o2 (VGA_Control/Blank_INV_22_o2)
+     LUT5:I4->O           63   0.254   2.377  VGA_Control/Blank_INV_22_o3 (VGA_Control/Blank_INV_22_o)
+     LUT6:I0->O            7   0.254   1.340  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_201_OUT<4:0>_lut<2>1 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_201_OUT<4:0>_lut<2>)
+     LUT5:I0->O            3   0.254   0.766  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_201_OUT<4:0>_cy<2>11 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_201_OUT<4:0>_cy<2>)
+     LUT6:I5->O           10   0.254   1.463  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_201_OUT<4:0>_xor<4>11 (VGA_SQ/GND_8_o_GND_8_o_sub_201_OUT<4>)
+     LUT6:I0->O            2   0.254   1.156  VGA_SQ/_n0956<4>2 (VGA_SQ/_n0956)
+     LUT5:I0->O            1   0.254   1.137  VGA_SQ/PWR_9_o_GND_8_o_AND_52_o1 (VGA_SQ/PWR_9_o_GND_8_o_AND_52_o1)
+     LUT6:I0->O            3   0.254   0.994  VGA_SQ/PWR_9_o_GND_8_o_AND_52_o7 (VGA_SQ/PWR_9_o_GND_8_o_AND_52_o)
+     LUT5:I2->O            2   0.235   0.726  VGA_SQ/Mmux_ColorOutput413 (VGA_SQ/Mmux_ColorOutput41)
+     LUT3:I2->O            1   0.254   0.681  VGA_Control/Mmux_GREEN21 (VGA_G_1_OBUF)
+     OBUF:I->O                 2.912          VGA_G_1_OBUF (VGA_G<1>)
     ----------------------------------------
-    Total                     18.892ns (5.977ns logic, 12.915ns route)
-                                       (31.6% logic, 68.4% route)
+    Total                     20.022ns (6.208ns logic, 13.814ns route)
+                                       (31.0% logic, 69.0% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'VGA_SQ/GND_8_o_GND_8_o_OR_658_o'
-  Total number of paths / destination ports: 228 / 4
+Timing constraint: Default OFFSET OUT AFTER for Clock 'VGA_SQ/GND_8_o_GND_8_o_OR_50_o'
+  Total number of paths / destination ports: 2023 / 5
 -------------------------------------------------------------------------
-Offset:              11.577ns (Levels of Logic = 7)
-  Source:            VGA_SQ/posy_0 (LATCH)
-  Destination:       VGA_B<0> (PAD)
-  Source Clock:      VGA_SQ/GND_8_o_GND_8_o_OR_658_o falling
-
-  Data Path: VGA_SQ/posy_0 to VGA_B<0>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               7   0.581   1.186  VGA_SQ/posy_0 (VGA_SQ/posy_0)
-     LUT6:I2->O            4   0.254   1.234  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_145_OUT<4:0>_lut<2>1 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_145_OUT<4:0>_lut<2>)
-     LUT5:I0->O            1   0.254   0.682  VGA_SQ/Mmux__n075812311 (VGA_SQ/Mmux__n07581231)
-     LUT6:I5->O            2   0.254   1.181  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_145_OUT<4:0>_xor<4>11 (VGA_SQ/GND_8_o_GND_8_o_sub_145_OUT<4>)
-     LUT6:I0->O            1   0.254   0.682  VGA_SQ/posx[31]_GND_8_o_AND_48_o8 (VGA_SQ/posx[31]_GND_8_o_AND_48_o8)
-     LUT6:I5->O            3   0.254   0.874  VGA_SQ/posx[31]_GND_8_o_AND_48_o14 (VGA_SQ/posx[31]_GND_8_o_AND_48_o)
-     LUT3:I1->O            2   0.250   0.725  VGA_Control/Mmux_BLUE11 (VGA_B_0_OBUF)
-     OBUF:I->O                 2.912          VGA_B_0_OBUF (VGA_B<0>)
-    ----------------------------------------
-    Total                     11.577ns (5.013ns logic, 6.564ns route)
-                                       (43.3% logic, 56.7% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'RESET_N'
-  Total number of paths / destination ports: 26 / 4
--------------------------------------------------------------------------
-Offset:              11.437ns (Levels of Logic = 14)
-  Source:            VGA_SQ/pl_posx_3_LD (LATCH)
-  Destination:       VGA_B<0> (PAD)
-  Source Clock:      RESET_N rising
-
-  Data Path: VGA_SQ/pl_posx_3_LD to VGA_B<0>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               8   0.581   1.172  VGA_SQ/pl_posx_3_LD (VGA_SQ/pl_posx_3_LD)
-     LUT3:I0->O            1   0.235   0.910  VGA_SQ/pl_posx_11 (VGA_SQ/pl_posx_1)
-     LUT6:I3->O            1   0.235   0.000  VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_142_o_lut<0> (VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_142_o_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_142_o_cy<0> (VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_142_o_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_142_o_cy<1> (VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_142_o_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_142_o_cy<2> (VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_142_o_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_142_o_cy<3> (VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_142_o_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_142_o_cy<4> (VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_142_o_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_142_o_cy<5> (VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_142_o_cy<5>)
-     MUXCY:CI->O           2   0.235   1.156  VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_142_o_cy<6> (VGA_SQ/posx[31]_pl_posx[31]_equal_142_o)
-     LUT6:I1->O            1   0.254   0.000  VGA_SQ/posx[31]_GND_8_o_AND_48_o7_G (N61)
-     MUXF7:I1->O           1   0.175   1.137  VGA_SQ/posx[31]_GND_8_o_AND_48_o7 (VGA_SQ/posx[31]_GND_8_o_AND_48_o7)
-     LUT6:I0->O            3   0.254   0.874  VGA_SQ/posx[31]_GND_8_o_AND_48_o14 (VGA_SQ/posx[31]_GND_8_o_AND_48_o)
-     LUT3:I1->O            2   0.250   0.725  VGA_Control/Mmux_BLUE11 (VGA_B_0_OBUF)
-     OBUF:I->O                 2.912          VGA_B_0_OBUF (VGA_B<0>)
-    ----------------------------------------
-    Total                     11.437ns (5.463ns logic, 5.974ns route)
-                                       (47.8% logic, 52.2% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'VGA_SQ/posy_2_G'
-  Total number of paths / destination ports: 78 / 4
--------------------------------------------------------------------------
-Offset:              11.405ns (Levels of Logic = 7)
-  Source:            VGA_SQ/posy_2 (LATCH)
-  Destination:       VGA_B<0> (PAD)
-  Source Clock:      VGA_SQ/posy_2_G falling
-
-  Data Path: VGA_SQ/posy_2 to VGA_B<0>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               7   0.581   1.018  VGA_SQ/posy_2 (VGA_SQ/posy_2)
-     LUT6:I4->O            4   0.250   1.234  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_145_OUT<4:0>_lut<2>1 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_145_OUT<4:0>_lut<2>)
-     LUT5:I0->O            1   0.254   0.682  VGA_SQ/Mmux__n075812311 (VGA_SQ/Mmux__n07581231)
-     LUT6:I5->O            2   0.254   1.181  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_145_OUT<4:0>_xor<4>11 (VGA_SQ/GND_8_o_GND_8_o_sub_145_OUT<4>)
-     LUT6:I0->O            1   0.254   0.682  VGA_SQ/posx[31]_GND_8_o_AND_48_o8 (VGA_SQ/posx[31]_GND_8_o_AND_48_o8)
-     LUT6:I5->O            3   0.254   0.874  VGA_SQ/posx[31]_GND_8_o_AND_48_o14 (VGA_SQ/posx[31]_GND_8_o_AND_48_o)
-     LUT3:I1->O            2   0.250   0.725  VGA_Control/Mmux_BLUE11 (VGA_B_0_OBUF)
-     OBUF:I->O                 2.912          VGA_B_0_OBUF (VGA_B<0>)
-    ----------------------------------------
-    Total                     11.405ns (5.009ns logic, 6.396ns route)
-                                       (43.9% logic, 56.1% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'VGA_SQ/posx_0_G'
-  Total number of paths / destination ports: 94 / 4
--------------------------------------------------------------------------
-Offset:              11.545ns (Levels of Logic = 7)
+Offset:              14.921ns (Levels of Logic = 9)
   Source:            VGA_SQ/posx_0 (LATCH)
-  Destination:       VGA_B<0> (PAD)
-  Source Clock:      VGA_SQ/posx_0_G falling
+  Destination:       VGA_G<1> (PAD)
+  Source Clock:      VGA_SQ/GND_8_o_GND_8_o_OR_50_o falling
 
-  Data Path: VGA_SQ/posx_0 to VGA_B<0>
+  Data Path: VGA_SQ/posx_0 to VGA_G<1>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      LD:G->Q               6   0.581   1.152  VGA_SQ/posx_0 (VGA_SQ/posx_0)
-     LUT6:I2->O            6   0.254   1.306  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_lut<2>1 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_lut<2>)
-     LUT6:I1->O            1   0.254   0.682  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_xor<4>111 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_xor<4>11)
-     LUT3:I2->O            2   0.254   0.725  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_xor<4>11 (VGA_SQ/GND_8_o_GND_8_o_sub_148_OUT<4>)
-     MUXF7:S->O            1   0.185   1.137  VGA_SQ/posx[31]_GND_8_o_AND_48_o7 (VGA_SQ/posx[31]_GND_8_o_AND_48_o7)
-     LUT6:I0->O            3   0.254   0.874  VGA_SQ/posx[31]_GND_8_o_AND_48_o14 (VGA_SQ/posx[31]_GND_8_o_AND_48_o)
-     LUT3:I1->O            2   0.250   0.725  VGA_Control/Mmux_BLUE11 (VGA_B_0_OBUF)
-     OBUF:I->O                 2.912          VGA_B_0_OBUF (VGA_B<0>)
+     LUT6:I2->O            7   0.254   1.340  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_201_OUT<4:0>_lut<2>1 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_201_OUT<4:0>_lut<2>)
+     LUT5:I0->O            3   0.254   0.766  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_201_OUT<4:0>_cy<2>11 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_201_OUT<4:0>_cy<2>)
+     LUT6:I5->O           10   0.254   1.463  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_201_OUT<4:0>_xor<4>11 (VGA_SQ/GND_8_o_GND_8_o_sub_201_OUT<4>)
+     LUT6:I0->O            2   0.254   1.156  VGA_SQ/_n0956<4>2 (VGA_SQ/_n0956)
+     LUT5:I0->O            1   0.254   1.137  VGA_SQ/PWR_9_o_GND_8_o_AND_52_o1 (VGA_SQ/PWR_9_o_GND_8_o_AND_52_o1)
+     LUT6:I0->O            3   0.254   0.994  VGA_SQ/PWR_9_o_GND_8_o_AND_52_o7 (VGA_SQ/PWR_9_o_GND_8_o_AND_52_o)
+     LUT5:I2->O            2   0.235   0.726  VGA_SQ/Mmux_ColorOutput413 (VGA_SQ/Mmux_ColorOutput41)
+     LUT3:I2->O            1   0.254   0.681  VGA_Control/Mmux_GREEN21 (VGA_G_1_OBUF)
+     OBUF:I->O                 2.912          VGA_G_1_OBUF (VGA_G<1>)
     ----------------------------------------
-    Total                     11.545ns (4.944ns logic, 6.601ns route)
-                                       (42.8% logic, 57.2% route)
+    Total                     14.921ns (5.506ns logic, 9.415ns route)
+                                       (36.9% logic, 63.1% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'VGA_SQ/posx_1_G'
-  Total number of paths / destination ports: 94 / 4
+Timing constraint: Default OFFSET OUT AFTER for Clock 'RESET_N'
+  Total number of paths / destination ports: 82 / 5
 -------------------------------------------------------------------------
-Offset:              11.478ns (Levels of Logic = 7)
-  Source:            VGA_SQ/posx_1 (LATCH)
-  Destination:       VGA_B<0> (PAD)
-  Source Clock:      VGA_SQ/posx_1_G falling
+Offset:              12.588ns (Levels of Logic = 14)
+  Source:            VGA_SQ/pl_posy_1_LD (LATCH)
+  Destination:       VGA_G<1> (PAD)
+  Source Clock:      RESET_N rising
 
-  Data Path: VGA_SQ/posx_1 to VGA_B<0>
+  Data Path: VGA_SQ/pl_posy_1_LD to VGA_G<1>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q               6   0.581   1.104  VGA_SQ/posx_1 (VGA_SQ/posx_1)
-     LUT6:I3->O            6   0.235   1.306  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_lut<2>1 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_lut<2>)
-     LUT6:I1->O            1   0.254   0.682  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_xor<4>111 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_xor<4>11)
-     LUT3:I2->O            2   0.254   0.725  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_xor<4>11 (VGA_SQ/GND_8_o_GND_8_o_sub_148_OUT<4>)
-     MUXF7:S->O            1   0.185   1.137  VGA_SQ/posx[31]_GND_8_o_AND_48_o7 (VGA_SQ/posx[31]_GND_8_o_AND_48_o7)
-     LUT6:I0->O            3   0.254   0.874  VGA_SQ/posx[31]_GND_8_o_AND_48_o14 (VGA_SQ/posx[31]_GND_8_o_AND_48_o)
-     LUT3:I1->O            2   0.250   0.725  VGA_Control/Mmux_BLUE11 (VGA_B_0_OBUF)
-     OBUF:I->O                 2.912          VGA_B_0_OBUF (VGA_B<0>)
+     LD:G->Q               9   0.581   1.204  VGA_SQ/pl_posy_1_LD (VGA_SQ/pl_posy_1_LD)
+     LUT3:I0->O            3   0.235   0.994  VGA_SQ/pl_posx_11 (VGA_SQ/pl_posx_1)
+     LUT6:I3->O            1   0.235   0.000  VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_195_o_lut<0> (VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_195_o_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_195_o_cy<0> (VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_195_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_195_o_cy<1> (VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_195_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_195_o_cy<2> (VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_195_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_195_o_cy<3> (VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_195_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_195_o_cy<4> (VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_195_o_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_195_o_cy<5> (VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_195_o_cy<5>)
+     MUXCY:CI->O           4   0.235   1.259  VGA_SQ/Mcompar_posx[31]_pl_posx[31]_equal_195_o_cy<6> (VGA_SQ/posx[31]_pl_posx[31]_equal_195_o)
+     LUT6:I0->O            1   0.254   1.137  VGA_SQ/GND_8_o_GND_8_o_AND_55_o1 (VGA_SQ/GND_8_o_GND_8_o_AND_55_o1)
+     LUT6:I0->O            3   0.254   1.042  VGA_SQ/GND_8_o_GND_8_o_AND_55_o4 (VGA_SQ/GND_8_o_GND_8_o_AND_55_o)
+     LUT5:I1->O            2   0.254   0.726  VGA_SQ/Mmux_ColorOutput413 (VGA_SQ/Mmux_ColorOutput41)
+     LUT3:I2->O            1   0.254   0.681  VGA_Control/Mmux_GREEN21 (VGA_G_1_OBUF)
+     OBUF:I->O                 2.912          VGA_G_1_OBUF (VGA_G<1>)
     ----------------------------------------
-    Total                     11.478ns (4.925ns logic, 6.553ns route)
-                                       (42.9% logic, 57.1% route)
+    Total                     12.588ns (5.545ns logic, 7.043ns route)
+                                       (44.1% logic, 55.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'VGA_SQ/posx_2_G'
-  Total number of paths / destination ports: 94 / 4
+  Total number of paths / destination ports: 577 / 5
 -------------------------------------------------------------------------
-Offset:              11.373ns (Levels of Logic = 7)
+Offset:              14.749ns (Levels of Logic = 9)
   Source:            VGA_SQ/posx_2 (LATCH)
-  Destination:       VGA_B<0> (PAD)
+  Destination:       VGA_G<1> (PAD)
   Source Clock:      VGA_SQ/posx_2_G falling
 
-  Data Path: VGA_SQ/posx_2 to VGA_B<0>
+  Data Path: VGA_SQ/posx_2 to VGA_G<1>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      LD:G->Q               6   0.581   0.984  VGA_SQ/posx_2 (VGA_SQ/posx_2)
-     LUT6:I4->O            6   0.250   1.306  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_lut<2>1 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_lut<2>)
-     LUT6:I1->O            1   0.254   0.682  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_xor<4>111 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_xor<4>11)
-     LUT3:I2->O            2   0.254   0.725  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_xor<4>11 (VGA_SQ/GND_8_o_GND_8_o_sub_148_OUT<4>)
-     MUXF7:S->O            1   0.185   1.137  VGA_SQ/posx[31]_GND_8_o_AND_48_o7 (VGA_SQ/posx[31]_GND_8_o_AND_48_o7)
-     LUT6:I0->O            3   0.254   0.874  VGA_SQ/posx[31]_GND_8_o_AND_48_o14 (VGA_SQ/posx[31]_GND_8_o_AND_48_o)
-     LUT3:I1->O            2   0.250   0.725  VGA_Control/Mmux_BLUE11 (VGA_B_0_OBUF)
-     OBUF:I->O                 2.912          VGA_B_0_OBUF (VGA_B<0>)
+     LUT6:I4->O            7   0.250   1.340  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_201_OUT<4:0>_lut<2>1 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_201_OUT<4:0>_lut<2>)
+     LUT5:I0->O            3   0.254   0.766  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_201_OUT<4:0>_cy<2>11 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_201_OUT<4:0>_cy<2>)
+     LUT6:I5->O           10   0.254   1.463  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_201_OUT<4:0>_xor<4>11 (VGA_SQ/GND_8_o_GND_8_o_sub_201_OUT<4>)
+     LUT6:I0->O            2   0.254   1.156  VGA_SQ/_n0956<4>2 (VGA_SQ/_n0956)
+     LUT5:I0->O            1   0.254   1.137  VGA_SQ/PWR_9_o_GND_8_o_AND_52_o1 (VGA_SQ/PWR_9_o_GND_8_o_AND_52_o1)
+     LUT6:I0->O            3   0.254   0.994  VGA_SQ/PWR_9_o_GND_8_o_AND_52_o7 (VGA_SQ/PWR_9_o_GND_8_o_AND_52_o)
+     LUT5:I2->O            2   0.235   0.726  VGA_SQ/Mmux_ColorOutput413 (VGA_SQ/Mmux_ColorOutput41)
+     LUT3:I2->O            1   0.254   0.681  VGA_Control/Mmux_GREEN21 (VGA_G_1_OBUF)
+     OBUF:I->O                 2.912          VGA_G_1_OBUF (VGA_G<1>)
     ----------------------------------------
-    Total                     11.373ns (4.940ns logic, 6.433ns route)
-                                       (43.4% logic, 56.6% route)
+    Total                     14.749ns (5.502ns logic, 9.247ns route)
+                                       (37.3% logic, 62.7% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'VGA_SQ/posx_4_G'
-  Total number of paths / destination ports: 94 / 4
+Timing constraint: Default OFFSET OUT AFTER for Clock 'VGA_SQ/GND_8_o_GND_8_o_OR_658_o'
+  Total number of paths / destination ports: 1508 / 5
 -------------------------------------------------------------------------
-Offset:              11.269ns (Levels of Logic = 7)
-  Source:            VGA_SQ/posx_4 (LATCH)
-  Destination:       VGA_B<0> (PAD)
-  Source Clock:      VGA_SQ/posx_4_G falling
+Offset:              14.721ns (Levels of Logic = 9)
+  Source:            VGA_SQ/posy_0 (LATCH)
+  Destination:       VGA_G<1> (PAD)
+  Source Clock:      VGA_SQ/GND_8_o_GND_8_o_OR_658_o falling
 
-  Data Path: VGA_SQ/posx_4 to VGA_B<0>
+  Data Path: VGA_SQ/posy_0 to VGA_G<1>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q               6   0.581   0.876  VGA_SQ/posx_4 (VGA_SQ/posx_4)
-     LUT6:I5->O            6   0.254   1.306  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_lut<2>1 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_lut<2>)
-     LUT6:I1->O            1   0.254   0.682  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_xor<4>111 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_xor<4>11)
-     LUT3:I2->O            2   0.254   0.725  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_xor<4>11 (VGA_SQ/GND_8_o_GND_8_o_sub_148_OUT<4>)
-     MUXF7:S->O            1   0.185   1.137  VGA_SQ/posx[31]_GND_8_o_AND_48_o7 (VGA_SQ/posx[31]_GND_8_o_AND_48_o7)
-     LUT6:I0->O            3   0.254   0.874  VGA_SQ/posx[31]_GND_8_o_AND_48_o14 (VGA_SQ/posx[31]_GND_8_o_AND_48_o)
-     LUT3:I1->O            2   0.250   0.725  VGA_Control/Mmux_BLUE11 (VGA_B_0_OBUF)
-     OBUF:I->O                 2.912          VGA_B_0_OBUF (VGA_B<0>)
+     LD:G->Q              11   0.581   1.315  VGA_SQ/posy_0 (VGA_SQ/posy_0)
+     LUT6:I2->O            7   0.254   1.365  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_198_OUT<4:0>_lut<2>1 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_198_OUT<4:0>_lut<2>)
+     LUT6:I0->O            2   0.254   0.726  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_198_OUT<4:0>_cy<2>11 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_198_OUT<4:0>_cy<2>)
+     LUT6:I5->O            8   0.254   1.399  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_198_OUT<4:0>_xor<4>11 (VGA_SQ/GND_8_o_GND_8_o_sub_198_OUT<4>)
+     LUT6:I0->O            2   0.254   1.156  VGA_SQ/Mram__n089512 (VGA_SQ/Mram__n0895)
+     LUT6:I1->O            1   0.254   0.958  VGA_SQ/GND_8_o_GND_8_o_AND_58_o2 (VGA_SQ/GND_8_o_GND_8_o_AND_58_o2)
+     LUT5:I1->O            3   0.254   0.874  VGA_SQ/GND_8_o_GND_8_o_AND_58_o5 (VGA_SQ/GND_8_o_GND_8_o_AND_58_o)
+     LUT5:I3->O            2   0.250   0.726  VGA_SQ/Mmux_ColorOutput413 (VGA_SQ/Mmux_ColorOutput41)
+     LUT3:I2->O            1   0.254   0.681  VGA_Control/Mmux_GREEN21 (VGA_G_1_OBUF)
+     OBUF:I->O                 2.912          VGA_G_1_OBUF (VGA_G<1>)
     ----------------------------------------
-    Total                     11.269ns (4.944ns logic, 6.325ns route)
-                                       (43.9% logic, 56.1% route)
+    Total                     14.721ns (5.521ns logic, 9.200ns route)
+                                       (37.5% logic, 62.5% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'VGA_SQ/posx_3_G'
-  Total number of paths / destination ports: 42 / 4
+Timing constraint: Default OFFSET OUT AFTER for Clock 'VGA_SQ/posy_2_G'
+  Total number of paths / destination ports: 537 / 5
 -------------------------------------------------------------------------
-Offset:              11.045ns (Levels of Logic = 7)
-  Source:            VGA_SQ/posx_3 (LATCH)
-  Destination:       VGA_B<0> (PAD)
-  Source Clock:      VGA_SQ/posx_3_G falling
+Offset:              14.549ns (Levels of Logic = 9)
+  Source:            VGA_SQ/posy_2 (LATCH)
+  Destination:       VGA_G<1> (PAD)
+  Source Clock:      VGA_SQ/posy_2_G falling
 
-  Data Path: VGA_SQ/posx_3 to VGA_B<0>
+  Data Path: VGA_SQ/posy_2 to VGA_G<1>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q               4   0.581   0.912  VGA_SQ/posx_3 (VGA_SQ/posx_3)
-     LUT6:I4->O            5   0.250   1.069  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_lut<1>1 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_lut<1>)
-     LUT6:I3->O            1   0.235   0.682  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_xor<4>111 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_xor<4>11)
-     LUT3:I2->O            2   0.254   0.725  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_148_OUT<4:0>_xor<4>11 (VGA_SQ/GND_8_o_GND_8_o_sub_148_OUT<4>)
-     MUXF7:S->O            1   0.185   1.137  VGA_SQ/posx[31]_GND_8_o_AND_48_o7 (VGA_SQ/posx[31]_GND_8_o_AND_48_o7)
-     LUT6:I0->O            3   0.254   0.874  VGA_SQ/posx[31]_GND_8_o_AND_48_o14 (VGA_SQ/posx[31]_GND_8_o_AND_48_o)
-     LUT3:I1->O            2   0.250   0.725  VGA_Control/Mmux_BLUE11 (VGA_B_0_OBUF)
-     OBUF:I->O                 2.912          VGA_B_0_OBUF (VGA_B<0>)
+     LD:G->Q              11   0.581   1.147  VGA_SQ/posy_2 (VGA_SQ/posy_2)
+     LUT6:I4->O            7   0.250   1.365  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_198_OUT<4:0>_lut<2>1 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_198_OUT<4:0>_lut<2>)
+     LUT6:I0->O            2   0.254   0.726  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_198_OUT<4:0>_cy<2>11 (VGA_SQ/Msub_GND_8_o_GND_8_o_sub_198_OUT<4:0>_cy<2>)
+     LUT6:I5->O            8   0.254   1.399  VGA_SQ/Msub_GND_8_o_GND_8_o_sub_198_OUT<4:0>_xor<4>11 (VGA_SQ/GND_8_o_GND_8_o_sub_198_OUT<4>)
+     LUT6:I0->O            2   0.254   1.156  VGA_SQ/Mram__n089512 (VGA_SQ/Mram__n0895)
+     LUT6:I1->O            1   0.254   0.958  VGA_SQ/GND_8_o_GND_8_o_AND_58_o2 (VGA_SQ/GND_8_o_GND_8_o_AND_58_o2)
+     LUT5:I1->O            3   0.254   0.874  VGA_SQ/GND_8_o_GND_8_o_AND_58_o5 (VGA_SQ/GND_8_o_GND_8_o_AND_58_o)
+     LUT5:I3->O            2   0.250   0.726  VGA_SQ/Mmux_ColorOutput413 (VGA_SQ/Mmux_ColorOutput41)
+     LUT3:I2->O            1   0.254   0.681  VGA_Control/Mmux_GREEN21 (VGA_G_1_OBUF)
+     OBUF:I->O                 2.912          VGA_G_1_OBUF (VGA_G<1>)
     ----------------------------------------
-    Total                     11.045ns (4.921ns logic, 6.124ns route)
-                                       (44.6% logic, 55.4% route)
+    Total                     14.549ns (5.517ns logic, 9.032ns route)
+                                       (37.9% logic, 62.1% route)
 
 =========================================================================
 
@@ -1288,8 +1263,16 @@ Clock to Setup on destination clock CLOCK_24
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLOCK_24       |    4.566|         |         |         |
-RESET_N        |    4.623|         |         |         |
+CLOCK_24       |    5.758|         |         |         |
+RESET_N        |    6.129|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VGA_SQ/GND_8_o_GND_8_o_OR_50_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLOCK_24       |         |         |   18.369|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock VGA_SQ/GND_8_o_GND_8_o_OR_658_o
@@ -1297,23 +1280,7 @@ Clock to Setup on destination clock VGA_SQ/GND_8_o_GND_8_o_OR_658_o
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLOCK_24       |         |         |   17.856|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock VGA_SQ/posx_0_G
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-CLOCK_24       |         |         |   13.826|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock VGA_SQ/posx_1_G
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-CLOCK_24       |         |         |   11.543|         |
+CLOCK_24       |         |         |   18.410|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock VGA_SQ/posx_2_G
@@ -1321,23 +1288,7 @@ Clock to Setup on destination clock VGA_SQ/posx_2_G
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLOCK_24       |         |         |   10.422|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock VGA_SQ/posx_3_G
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-CLOCK_24       |         |         |   10.654|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock VGA_SQ/posx_4_G
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-CLOCK_24       |         |         |   12.177|         |
+CLOCK_24       |         |         |   19.583|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock VGA_SQ/posy_2_G
@@ -1345,20 +1296,20 @@ Clock to Setup on destination clock VGA_SQ/posy_2_G
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLOCK_24       |         |         |   17.169|         |
+CLOCK_24       |         |         |   19.870|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 12.94 secs
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 11.72 secs
  
 --> 
 
 Total memory usage is 4501948 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  451 (   0 filtered)
+Number of warnings :  476 (   0 filtered)
 Number of infos    :    4 (   0 filtered)
 
