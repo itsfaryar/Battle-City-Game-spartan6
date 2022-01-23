@@ -20,7 +20,11 @@ entity CAD971Test is
 		
 		--//////////// KEYS //////////
 		Key : in std_logic_vector(3 downto 0);
-		SW : in std_logic_vector(7 downto 0)
+		SW : in std_logic_vector(7 downto 0);
+		
+		--////////////Segments////////
+		outseg         : out bit_vector(3 downto 0); --Enable of segments to choose one
+		sevensegments  : out bit_vector(7 downto 0)
 	);
 end CAD971Test;
 
@@ -48,6 +52,8 @@ Component VGA_Square
 			ColorOut			: out std_logic_vector(5 downto 0); -- RED & GREEN & BLU
 			ScanlineX		: in std_logic_vector(10 downto 0);
 			ScanlineY		: in std_logic_vector(10 downto 0);
+			sevenseg		: out bit_vector(7 downto 0);
+			segout		: out bit_vector(3 downto 0);
 			Key 				: in std_logic_vector(3 downto 0);
 			SW 				: in std_logic_vector(7 downto 0)
   );
@@ -81,10 +87,12 @@ begin
 				ColorOut			=> ColorTable,
 				ScanlineX		=> ScanlineX,
 				ScanlineY		=> ScanlineY,
+				sevenseg			=> sevensegments,
+				segout			=> outseg,
 				key            => key,
 				sw             => sw
 			);
 	 
-
+	
 	 
 end CAD971Test;

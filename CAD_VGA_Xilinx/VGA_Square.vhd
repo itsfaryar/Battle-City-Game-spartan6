@@ -10,6 +10,8 @@ entity VGA_Square is
 			ColorOut			: out std_logic_vector(5 downto 0); -- RED & GREEN & BLUE
 			ScanlineX		: in std_logic_vector(10 downto 0);
 			ScanlineY		: in std_logic_vector(10 downto 0);
+			sevenseg		: out bit_vector(7 downto 0);
+			segout		: out bit_vector(3 downto 0);
 			Key 				: in std_logic_vector(3 downto 0);
 			SW 				: in std_logic_vector(7 downto 0)
 			
@@ -17,24 +19,29 @@ entity VGA_Square is
 end VGA_Square;
 
 architecture Behavioral of VGA_Square is
-	type GROUND_STATE is (PLAYER,EMPTY,ICE,BRICK,WALL);
+	type GROUND_STATE is (PLAYER,EMPTY,ICE,BRICK,WALL,FLAG);
 	type DIRECTION is (LEFT,RIGHT,UP,DOWN);
 	type GROUND_TYPE is array (0 to 19, 0 to 19) of GROUND_STATE ;
+	type numberLookup is array (0 to 9) of bit_vector(7 downto 0) ;
 	type POSITION_ARRAY is array (0 to 20) of integer ;
 	type BITMAP is array (0 to 21, 0 to 21) of bit ;
-	signal posx,posy,pl_posx,pl_posy: integer := 0;
+	signal posx,posy,pl_posx,pl_posy,time_s,time_m: integer := 0;
+	signal time_s_10,time_s_01,time_m_10,time_m_01 :integer range 0 to 9 :=0;
 	signal player_dir: DIRECTION:=UP;
 	signal ground: GROUND_TYPE := ((others=> (others=>EMPTY)));
-  signal ColorOutput: std_logic_vector(5 downto 0);
-  
- 
+	signal ColorOutput: std_logic_vector(5 downto 0);
+	signal gameEnded,win : bit:='0';
+	signal countForoneSeccond : std_logic_vector(25 downto 0) := (others => '0');
   --constant SquareWidth: std_logic_vector(4 downto 0) := "11001";
-  
+  signal sevensegmentStates : bit_vector(3 downto 0):= "0001";
+  signal sevensegmentNextState : bit_vector(3 downto 0):= "0001";
+   signal sevensegmentOut : bit_vector(7 downto 0):=x"c0";
   signal Prescaler: std_logic_vector(30 downto 0) := (others => '0');
 
 	constant startPositionsX : POSITION_ARRAY := (100,122,144,166,188,210,232,254,276,296,320,342,364,386,408,430,452,474,496,518,540);
 	constant startPositionsY : POSITION_ARRAY := (20,42,64,86,108,130,152,174,196,218,240,262,284,306,328,350,372,394,416,438,460);
-
+	constant sevenSegLookup  : numberLookup := (x"c0",x"F9",x"A4",x"B0",x"99",x"92",x"82",x"F8",x"80",x"98");
+	
 	--------------------------bit maps
 	constant tank_up : BITMAP :=(('0','0','0','0','0','0','0','0','0','0','1','1','0','0','0','0','0','0','0','0','0','0'),
 ('0','0','0','0','0','0','0','0','0','1','1','1','1','0','0','0','0','0','0','0','0','0'),
@@ -133,8 +140,103 @@ constant tank_right : BITMAP := (('0','0','0','0','0','0','0','0','0','0','0','0
 
 begin
 	
+ process(sevensegmentStates )
+	 begin
+		sevensegmentNextState<="1110";
+		case sevensegmentStates is
+		
+			when "1110" =>
+			sevensegmentNextState<="1101";
+			sevensegmentOut <= sevenSegLookup(time_m_10);
+			when "1101" =>
+			sevensegmentNextState<="1011";
+			sevensegmentOut <= sevenSegLookup(time_m_01);
+			when "1011" =>
+			sevensegmentNextState<="0111";
+			sevensegmentOut <= sevenSegLookup(time_s_10);
+			when "0111" =>
+			sevensegmentNextState<="1110";
+			sevensegmentOut <= sevenSegLookup(time_s_01);
+			when others =>
+			sevensegmentOut <= sevenSegLookup(0);
+		end case;
+	end process;	
 	
+	svnsegmentNextState: process(CLK_24MHz, RESET)
+		variable counter : integer range 0 to 5000 :=0;
+	begin
+		if RESET = '1' then
+			sevensegmentStates<="1110";
+		elsif rising_edge(CLK_24MHz) then
+			
+			 counter := counter +1;
+			 if (counter = 4999) then 
+				 counter :=0;
+			    sevensegmentStates<=sevensegmentNextState;
+			 end if;
+		end if;
+	end process svnsegmentNextState; 
+	segout <= sevensegmentStates;
+	sevenseg <= sevensegmentOut;
 	
+	timer: process(CLK_24MHz, RESET)
+	begin
+		if RESET = '1' then
+			countForoneSeccond <= (others => '0');
+			time_s <= 0;
+			time_s_10 <= 0;
+			time_s_01 <= 0;
+			time_m_10 <= 0;
+			time_m_01 <= 0;
+			time_m <= 0;
+			gameEnded<= '0';
+			win <= '0';
+		elsif rising_edge(CLK_24MHz) then
+		
+			if ground(pl_posy,pl_posx)=FLAG then
+				gameEnded <= '1';
+			end if;
+			if gameEnded='0' then
+				countForoneSeccond <= countForoneSeccond+1;
+				if countForoneSeccond = "1011011100011011000000000" then  -- Activated every 0,002 sec (2 msec)
+					if time_s<59 then
+						time_s <= time_s+1;
+						if time_s_01<9 then
+							time_s_01<= time_s_01+1;
+						else
+							time_s_01<=0;
+							time_s_10<=time_s_10+1;
+						end if;
+					else
+						time_s <= 0;
+						time_s_01<=0;
+						time_s_10<=0;
+						if time_m<=59 then
+							time_m<=time_m+1;
+							if time_m_01<9 then
+								time_m_01<= time_m_01+1;
+							else
+								time_m_01<=0;
+								time_m_10<=time_m_10;
+							end if;
+						else
+							time_m <=0;
+							time_m_01<=0;
+							time_m_10<=0;
+							gameEnded <= '1';
+						end if;
+						
+					end if;
+					countForoneSeccond <= (others => '0');
+				end if;
+				elsif time_m<10 then
+					win <= '1';
+					
+			end if;
+			
+		end if;
+	end process timer; 
+
 	
 	PrescalerCounter: process(CLK_24MHz, RESET)
 	begin
@@ -147,42 +249,46 @@ begin
 			ground(1,1)<=BRICK;
 			ground(9,9)<=BRICK;
 			player_dir <= UP;
+			ground(16,16) <= FLAG;
+			
 		elsif rising_edge(CLK_24MHz) then
-			Prescaler <= Prescaler + 1;	 
-			--if Prescaler = "11000011010100000" then  -- Activated every 0,002 sec (2 msec)
-			if Prescaler = "100110001001011010000000" then  -- Activated every 0,002 sec (2 msec)
-				 if key(0)='0' then
-					if pl_posy>0 then
-						pl_posy<=pl_posy-1;
-						player_dir<=UP;
-					else
-						player_dir<=DOWN;
+			if gameEnded='0' then
+				Prescaler <= Prescaler + 1;
+			
+				if Prescaler = "100110001001011010000000" then  -- Activated every 0,002 sec (2 msec)
+					 if key(0)='0' then
+						if pl_posy>0 and (ground(pl_posy-1,pl_posx)=EMPTY or ground(pl_posy-1,pl_posx)=ICE) then
+							pl_posy<=pl_posy-1;
+							player_dir<=UP;
+						else
+							player_dir<=DOWN;
+						end if;
+					elsif key(3)='0' then
+						if pl_posy<19 then
+							pl_posy<=pl_posy+1;
+							player_dir<= DOWN;
+						else
+							player_dir<= UP;
+						end if;
+					elsif key(1)='0' then
+						if pl_posx<19 then
+							pl_posx<=pl_posx+1;
+							player_dir<= RIGHT;
+						else
+							player_dir<= LEFT;
+						end if;
+						elsif key(2)='0' then
+						if pl_posx>0 then
+							pl_posx<=pl_posx-1;
+							player_dir<= LEFT;
+						else
+							player_dir<= RIGHT;
+						end if;
 					end if;
-				elsif key(3)='0' then
-					if pl_posy<19 then
-						pl_posy<=pl_posy+1;
-						player_dir<= DOWN;
-					else
-						player_dir<= UP;
-					end if;
-				elsif key(1)='0' then
-					if pl_posx<19 then
-						pl_posx<=pl_posx+1;
-						player_dir<= RIGHT;
-					else
-						player_dir<= LEFT;
-					end if;
-					elsif key(2)='0' then
-					if pl_posx>0 then
-						pl_posx<=pl_posx-1;
-						player_dir<= LEFT;
-					else
-						player_dir<= RIGHT;
-					end if;
+					
+					Prescaler <= (others => '0');
 				end if;
-				
-				Prescaler <= (others => '0');
-			end if;
+				end if;
 			
 		end if;
 	end process PrescalerCounter; 
@@ -234,6 +340,7 @@ begin
 				
 ---------methode 1
 	ColorOutput <= "101010" when (ScanlineY>="0000000000" and ScanlineY<"0000010100") or (ScanlineX>="0000000000" and ScanlineX<"0001100100") or (ScanlineY>="0111001100" and ScanlineY<"0111100000" )or (ScanlineX>="1000011100" and ScanlineX<"1010000000")
+						else "001000" when win='1'
 						else "100101" when player_dir=UP and pl_posx=posx and pl_posy=posy and tank_up(CONV_INTEGER(ScanlineY-conv_std_logic_vector(startPositionsY(posy),10)),CONV_INTEGER(ScanlineX-conv_std_logic_vector(startPositionsX(posx),10)))='1'
 						else "100101" when player_dir=DOWN and pl_posx=posx and pl_posy=posy and tank_down(CONV_INTEGER(ScanlineY-conv_std_logic_vector(startPositionsY(posy),10)),CONV_INTEGER(ScanlineX-conv_std_logic_vector(startPositionsX(posx),10)))='1'
 						else "100101" when player_dir=LEFT and pl_posx=posx and pl_posy=posy and tank_left(CONV_INTEGER(ScanlineY-conv_std_logic_vector(startPositionsY(posy),10)),CONV_INTEGER(ScanlineX-conv_std_logic_vector(startPositionsX(posx),10)))='1'
@@ -241,6 +348,7 @@ begin
 						
 						else "000000" when ground(posy,posx)=EMPTY
 						else "011000" when ground(posy,posx)=BRICK
+						else "001100" when ground(posy,posx)=FLAG
 						else "111111";
 	
 -----------methode 2: replaced with code above	
