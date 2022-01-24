@@ -19,28 +19,28 @@ entity VGA_Square is
 end VGA_Square;
 
 architecture Behavioral of VGA_Square is
-	type GROUND_STATE is (EMPTY,ICE,BRICK,WALL,FLAG);
+	type GROUND_STATE is (EMPTY,ICE,BRICK,crackedBrick,WALL,FLAG);
 	type DIRECTION is (LEFT,RIGHT,UP,DOWN);
 	type GROUND_TYPE is array (0 to 19, 0 to 19) of GROUND_STATE ;
 	type numberLookup is array (0 to 9) of bit_vector(7 downto 0) ;
 	type POSITION_ARRAY is array (0 to 20) of integer ;
 	type BITMAP is array (0 to 21, 0 to 21) of bit ;
-	signal posx,posy,pl_posx,pl_posy,time_s,time_m,rand_plx: integer := 0;
+	signal posx,posy,pl_posx,pl_posy,time_s,time_m,bullet_x,bullet_y: integer := 0;
 	signal time_s_10,time_s_01,time_m_10,time_m_01 :integer range 0 to 9 :=0;
-	signal player_dir: DIRECTION:=UP;
+	signal player_dir,bullet_dir: DIRECTION:=UP;
+	signal bulletOut : bit := '0';
 	signal ground: GROUND_TYPE := ((others=> (others=>EMPTY)));
 	signal ColorOutput: std_logic_vector(5 downto 0);
 	signal gameEnded,win,init : bit:='0';
 	signal countForoneSeccond : std_logic_vector(25 downto 0) := (others => '0');
   --constant SquareWidth: std_logic_vector(4 downto 0) := "11001";
-  signal sevensegmentStates : bit_vector(3 downto 0):= "0001";
-  signal sevensegmentNextState : bit_vector(3 downto 0):= "0001";
-   signal sevensegmentOut : bit_vector(7 downto 0):=x"c0";
-  signal Prescaler: std_logic_vector(30 downto 0) := (others => '0');
-  signal p_rand1: std_logic_vector(6 downto 0);
-  signal p_rand2: integer range 0 to 19 :=0; --std_logic_vector(9 downto 0);
-  signal pseudo_rand: std_logic_vector(31 downto 0) :=(others => '0');
-  signal pseudo_rand2: std_logic_vector(31 downto 0) :=(others => '0');
+	signal sevensegmentStates : bit_vector(3 downto 0):= "0001";
+	signal sevensegmentNextState : bit_vector(3 downto 0):= "0001";
+	signal sevensegmentOut : bit_vector(7 downto 0):=x"c0";
+	signal Prescaler,bulletdelay: std_logic_vector(30 downto 0) := (others => '0');
+	signal flag_posx: std_logic_vector(6 downto 0);
+	signal pseudo_rand: std_logic_vector(31 downto 0) :=(others => '0');
+	signal p_rand : std_logic_vector(6 downto 0) :=(others => '0');
 	constant startPositionsX : POSITION_ARRAY := (100,122,144,166,188,210,232,254,276,296,320,342,364,386,408,430,452,474,496,518,540);
 	constant startPositionsY : POSITION_ARRAY := (20,42,64,86,108,130,152,174,196,218,240,262,284,306,328,350,372,394,416,438,460);
 	constant sevenSegLookup  : numberLookup := (x"c0",x"F9",x"A4",x"B0",x"99",x"92",x"82",x"F8",x"80",x"98");
@@ -141,9 +141,13 @@ constant tank_right : BITMAP := (('0','0','0','0','0','0','0','0','0','0','0','0
 
 
 
+
+
+
 begin
-initialize: process(CLK_24MHz, RESET)
-variable x,y : integer :=0;
+
+	initialize: process(CLK_24MHz, RESET)
+variable x,y,bullet_newy,bullet_newx : integer :=0;
 		function lfsr32(x : std_logic_vector(31 downto 0)) return std_logic_vector is
 				begin
 				return x(30 downto 0) & (x(0) xnor x(1) xnor x(21) xnor x(31));
@@ -154,31 +158,23 @@ variable x,y : integer :=0;
 			x:=0;
 			y:=0;
 			ground <= ((others=> (others=>EMPTY)));
+			bulletdelay <= (others=>'0');
 		elsif rising_edge(CLK_24MHz) then
 		
 			if init='1' then
 				
 				pseudo_rand <= lfsr32(pseudo_rand);
-				p_rand1 <= not pseudo_rand(6 downto 0);
-				if p_rand1>="0000000" and p_rand1<"0000111" then
+				p_rand <= not pseudo_rand(6 downto 0);
+				if p_rand>="0000000" and p_rand<"0000111" then
 					ground(y,x)<=ICE;
-				elsif p_rand1>="0000111" and p_rand1<"0010111" then
+				elsif p_rand>="0000111" and p_rand<"0010111" then
 					ground(y,x)<=WALL;
-				elsif p_rand1>="0010111" and p_rand1<"0110111" then
+				elsif p_rand>="0010111" and p_rand<"0110111" then
 					ground(y,x)<=BRICK;
 				else
 					ground(y,x)<=EMPTY;
 				end if;
---				p_rand1 <= pseudo_rand(2 downto 0);
---				if p_rand1="00"  then
---					ground(y,x)<=EMPTY;
---				elsif p_rand1="01" then
---					ground(y,x)<=BRICK;
---				elsif p_rand1="10"  then
---					ground(y,x)<=WALL;
---				else
---					ground(y,x)<=ICE;
---				end if;
+
 				if x<19 then
 					x:= x+1;
 				else 
@@ -189,15 +185,67 @@ variable x,y : integer :=0;
 						y:=0;
 						init <= '0';
 						ground(19, CONV_INTEGER(pseudo_rand(4 downto 0))rem 19) <= FLAG;
-						
+						ground(0, CONV_INTEGER(pseudo_rand(10 downto 5))rem 19) <=	EMPTY;
 					end if;
 				end if;
 --			ground(19,CONV_INTEGER(pseudo_rand(10 downto 5))rem 19) <= FLAG;
-			
+			else
+				
+				if sw(0)='0' and bulletOut='0' then
+							bullet_dir<=player_dir;
+							bullet_x<=pl_posx;
+							bullet_y<=pl_posy;
+							bulletOut<='1';
+				else 
+					if bulletOut='1' then
+						bulletdelay<=bulletdelay+1;
+						if ground(bullet_y,bullet_x)=WALL then
+							bulletOut<='0';
+						elsif ground(bullet_y,bullet_x)=BRICK then
+							ground(bullet_y,bullet_x)<=crackedBrick;
+							bulletOut<='0';
+						elsif ground(bullet_y,bullet_x)=crackedBrick then
+							ground(bullet_y,bullet_x)<=EMPTY;
+							bulletOut<='0';
+						end if;
+				
+							if (bulletdelay = "100110001001011010000000") then 
+								bulletdelay<=(others=>'0');
+									
+									case bullet_dir is
+										when UP =>
+											if bullet_y>0 then
+												bullet_y<=bullet_y-1;
+											else
+												bulletOut<='0';
+											end if;
+										when DOWN =>
+											if bullet_y<19 then
+												bullet_y<=bullet_y+1;
+											else
+												bulletOut<='0';
+											end if;
+										when LEFT =>
+											if bullet_x>0 then 
+												bullet_x<=bullet_x-1;
+											else
+												bulletOut<='0';
+											end if;
+										when others => -- right
+										if bullet_x<19 then
+											bullet_x<=bullet_x+1;
+										else
+											bulletOut<='0';
+										end if;
+									end case;
+								
+							end if;
+						end if;
+					end if;-- if bulletOut
 			end if;
 		end if;
 	end process initialize; 
-		
+	
  process(sevensegmentStates )
 	 begin
 		sevensegmentNextState<="1110";
@@ -297,63 +345,115 @@ variable x,y : integer :=0;
 
 	
 	PrescalerCounter: process(CLK_24MHz, RESET)
-		function lfsr32(x : std_logic_vector(31 downto 0)) return std_logic_vector is
-				begin
-				return x(30 downto 0) & (x(0) xnor x(1) xnor x(21) xnor x(31));
-			end function;
+		
 	begin
 		if RESET = '1' then
 			
 			Prescaler <= (others => '0');
-			pseudo_rand2 <= lfsr32(pseudo_rand2);
-	      pl_posx <= CONV_INTEGER(pseudo_rand2(4 downto 0))rem 19;
+			
+	      pl_posx <=0;
 			pl_posy<=0;
 			
 			player_dir <= DOWN;
 			
 			
 		elsif rising_edge(CLK_24MHz) then
-			if gameEnded='0' then
-				Prescaler <= Prescaler + 1;
+			if init='1' then
 			
-				if Prescaler = "100110001001011010000000" then  -- Activated every 0,002 sec (2 msec)
-					 if key(0)='0' then
-						if pl_posy>0 and (ground(pl_posy-1,pl_posx)=EMPTY or ground(pl_posy-1,pl_posx)=ICE) then
-							pl_posy<=pl_posy-1;
-							player_dir<=UP;
-						else
-							player_dir<=DOWN;
+			else
+				
+				if gameEnded='0' then
+					Prescaler <= Prescaler + 1;
+				
+					if Prescaler = "100110001001011010000000" then  -- Activated every 0,002 sec (2 msec)
+						 if key(0)='0' then
+							if pl_posy>0 and (ground(pl_posy-1,pl_posx)=EMPTY or ground(pl_posy-1,pl_posx)=ICE or ground(pl_posy-1,pl_posx)=FLAG) then
+								pl_posy<=pl_posy-1;
+								player_dir<=UP;
+							else
+								player_dir<=DOWN;
+							end if;
+						elsif key(3)='0' then
+							if pl_posy<19 and (ground(pl_posy+1,pl_posx)=EMPTY or ground(pl_posy+1,pl_posx)=ICE or ground(pl_posy+1,pl_posx)=FLAG) then
+								pl_posy<=pl_posy+1;
+								player_dir<= DOWN;
+							else
+								player_dir<= UP;
+							end if;
+						elsif key(1)='0' then
+							if pl_posx<19 and (ground(pl_posy,pl_posx+1)=EMPTY or ground(pl_posy,pl_posx+1)=ICE or ground(pl_posy,pl_posx+1)=FLAG)then
+								pl_posx<=pl_posx+1;
+								player_dir<= RIGHT;
+							else
+								player_dir<= LEFT;
+							end if;
+							elsif key(2)='0' then
+							if pl_posx>0 and (ground(pl_posy,pl_posx-1)=EMPTY or ground(pl_posy,pl_posx-1)=ICE or ground(pl_posy,pl_posx-1)=FLAG) then
+								pl_posx<=pl_posx-1;
+								player_dir<= LEFT;
+							else
+								player_dir<= RIGHT;
+							end if;
 						end if;
-					elsif key(3)='0' then
-						if pl_posy<19 and (ground(pl_posy+1,pl_posx)=EMPTY or ground(pl_posy+1,pl_posx)=ICE) then
-							pl_posy<=pl_posy+1;
-							player_dir<= DOWN;
-						else
-							player_dir<= UP;
-						end if;
-					elsif key(1)='0' then
-						if pl_posx<19 and (ground(pl_posy,pl_posx+1)=EMPTY or ground(pl_posy,pl_posx+1)=ICE)then
-							pl_posx<=pl_posx+1;
-							player_dir<= RIGHT;
-						else
-							player_dir<= LEFT;
-						end if;
-						elsif key(2)='0' then
-						if pl_posx>0 and (ground(pl_posy,pl_posx-1)=EMPTY or ground(pl_posy,pl_posx-1)=ICE) then
-							pl_posx<=pl_posx-1;
-							player_dir<= LEFT;
-						else
-							player_dir<= RIGHT;
-						end if;
+						
+						Prescaler <= (others => '0');
 					end if;
-					
-					Prescaler <= (others => '0');
-				end if;
-				end if;
-			
+					end if;
+			end if;
 		end if;
 	end process PrescalerCounter; 
-
+	
+--		bulletMove: process(bullet_x,bullet_y,bulletOut)
+--			begin
+--				if bulletOut='1' then 
+--					case bullet_dir is
+--						when UP =>
+--							if bullet_y<=0 then --or ground(bullet_y-1,bullet_x)=WALL then
+--								--bulletOut<='0';
+--							--elsif ground(bullet_y-1,bullet_x)=BRICK then
+--							--		ground(bullet_y-1,bullet_x)<=crackedBrick;
+--							--elsif ground(bullet_y-1,bullet_x)=crackedBrick then
+--							--		ground(bullet_y-1,bullet_x)<=EMPTY;
+--							else
+--								bullet_newy<=bullet_y-1;
+--								bullet_newx<=bullet_x;
+--							end if;
+--						when DOWN =>
+--							if bullet_y>=19 then--or ground(bullet_y+1,bullet_x)=WALL then
+--									--bulletOut<='0';
+--							--elsif ground(bullet_y+1,bullet_x)=BRICK then
+--							--		ground(bullet_y+1,bullet_x)<=crackedBrick;
+--							--elsif ground(bullet_y+1,bullet_x)=crackedBrick then
+--							--		ground(bullet_y+1,bullet_x)<=EMPTY;
+--							else
+--								bullet_newy<=bullet_y+1;
+--								bullet_newx<=bullet_x;
+--							end if;
+--						when LEFT =>
+--							if bullet_x<=0 then--or ground(bullet_y,bullet_x-1)=WALL then
+--									--bulletOut<='0';
+--							--elsif ground(bullet_y,bullet_x-1)=BRICK then
+--							--		ground(bullet_y,bullet_x-1)<=crackedBrick;
+--							--elsif ground(bullet_y,bullet_x-1)=crackedBrick then
+--							--		ground(bullet_y,bullet_x-1)<=EMPTY;
+--							else
+--								bullet_newx<=bullet_x-1;
+--								bullet_newy<=bullet_y;
+--							end if;
+--						when others => -- right
+--						if bullet_x>=19 then--or ground(bullet_y,bullet_x+1)=WALL then
+--								--bulletOut<='0';
+--						--elsif ground(bullet_y,bullet_x+1)=BRICK then
+--						--		ground(bullet_y,bullet_x+1)<=crackedBrick;
+--						--elsif ground(bullet_y,bullet_x+1)=crackedBrick then
+--						--		ground(bullet_y,bullet_x+1)<=EMPTY;
+--						else
+--							bullet_newx<=bullet_x+1;
+--							bullet_newy<=bullet_y;
+--						end if;
+--					end case;
+--				end if;
+--	end process bulletMove; 
 
 	posx <= 0 when ScanlineX>=conv_std_logic_vector(100,10) and ScanlineX<conv_std_logic_vector(122,10)
 				else 1 when ScanlineX>=conv_std_logic_vector(122,10) and ScanlineX<conv_std_logic_vector(144,10)
@@ -402,16 +502,18 @@ variable x,y : integer :=0;
 ---------methode 1
 	ColorOutput <= "101010" when (ScanlineY>="0000000000" and ScanlineY<"0000010100") or (ScanlineX>="0000000000" and ScanlineX<"0001100100") or (ScanlineY>="0111001100" and ScanlineY<"0111100000" )or (ScanlineX>="1000011100" and ScanlineX<"1010000000")
 						else "001000" when win='1'
-						else "100101" when player_dir=UP and pl_posx=posx and pl_posy=posy and tank_up(CONV_INTEGER(ScanlineY-conv_std_logic_vector(startPositionsY(posy),10)),CONV_INTEGER(ScanlineX-conv_std_logic_vector(startPositionsX(posx),10)))='1'
-						else "100101" when player_dir=DOWN and pl_posx=posx and pl_posy=posy and tank_down(CONV_INTEGER(ScanlineY-conv_std_logic_vector(startPositionsY(posy),10)),CONV_INTEGER(ScanlineX-conv_std_logic_vector(startPositionsX(posx),10)))='1'
-						else "100101" when player_dir=LEFT and pl_posx=posx and pl_posy=posy and tank_left(CONV_INTEGER(ScanlineY-conv_std_logic_vector(startPositionsY(posy),10)),CONV_INTEGER(ScanlineX-conv_std_logic_vector(startPositionsX(posx),10)))='1'
-						else "100101" when player_dir=RIGHT and pl_posx=posx and pl_posy=posy and tank_right(CONV_INTEGER(ScanlineY-conv_std_logic_vector(startPositionsY(posy),10)),CONV_INTEGER(ScanlineX-conv_std_logic_vector(startPositionsX(posx),10)))='1'
-						
+						else "100101" when init='0' and player_dir=UP and pl_posx=posx and pl_posy=posy and tank_up(CONV_INTEGER(ScanlineY-conv_std_logic_vector(startPositionsY(posy),10)),CONV_INTEGER(ScanlineX-conv_std_logic_vector(startPositionsX(posx),10)))='1'
+						else "100101" when init='0' and player_dir=DOWN and pl_posx=posx and pl_posy=posy and tank_down(CONV_INTEGER(ScanlineY-conv_std_logic_vector(startPositionsY(posy),10)),CONV_INTEGER(ScanlineX-conv_std_logic_vector(startPositionsX(posx),10)))='1'
+						else "100101" when init='0' and player_dir=LEFT and pl_posx=posx and pl_posy=posy and tank_left(CONV_INTEGER(ScanlineY-conv_std_logic_vector(startPositionsY(posy),10)),CONV_INTEGER(ScanlineX-conv_std_logic_vector(startPositionsX(posx),10)))='1'
+						else "100101" when init='0' and player_dir=RIGHT and pl_posx=posx and pl_posy=posy and tank_right(CONV_INTEGER(ScanlineY-conv_std_logic_vector(startPositionsY(posy),10)),CONV_INTEGER(ScanlineX-conv_std_logic_vector(startPositionsX(posx),10)))='1'
+						else "111111" when bullet_x=posx and bullet_y=posy and bulletOut='1'
 						else "000000" when ground(posy,posx)=EMPTY
 						else "000001" when ground(posy,posx)=ICE
+						else "101010" when ground(posy,posx)=WALL
 						else "011000" when ground(posy,posx)=BRICK
+						else "100000" when ground(posy,posx)=crackedBrick
 						else "001100" when ground(posy,posx)=FLAG
-						else "111111";
+						else "000000";
 	
 -----------methode 2: replaced with code above	
 --	ColorProcess: process(ScanlineX,ScanlineY)

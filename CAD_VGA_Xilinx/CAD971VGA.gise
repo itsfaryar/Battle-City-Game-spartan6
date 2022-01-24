@@ -178,7 +178,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1642982926" xil_pn:in_ck="3691854211084612968" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-2129841214009148962" xil_pn:start_ts="1642982887">
+    <transform xil_pn:end_ts="1643031406" xil_pn:in_ck="3691854211084612968" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-2129841214009148962" xil_pn:start_ts="1643031351">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -202,7 +202,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1642982933" xil_pn:in_ck="-5571499148700627143" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-7654452549146510160" xil_pn:start_ts="1642982926">
+    <transform xil_pn:end_ts="1643031414" xil_pn:in_ck="-5571499148700627143" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-7654452549146510160" xil_pn:start_ts="1643031406">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="CAD971Test.bld"/>
@@ -211,7 +211,7 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1642982975" xil_pn:in_ck="-5571499106082184166" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1448924893915930207" xil_pn:start_ts="1642982933">
+    <transform xil_pn:end_ts="1643031899" xil_pn:in_ck="-5571499106082184166" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1448924893915930207" xil_pn:start_ts="1643031414">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="CAD971Test.pcf"/>
@@ -224,7 +224,7 @@
       <outfile xil_pn:name="CAD971Test_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1642983004" xil_pn:in_ck="-6817243877593484013" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="93661965788626211" xil_pn:start_ts="1642982975">
+    <transform xil_pn:end_ts="1643032019" xil_pn:in_ck="-6817243877593484013" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="93661965788626211" xil_pn:start_ts="1643031899">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -239,7 +239,7 @@
       <outfile xil_pn:name="CAD971Test_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1642983019" xil_pn:in_ck="-385954645388575060" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1642983004">
+    <transform xil_pn:end_ts="1643032045" xil_pn:in_ck="-385954645388575060" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1643032019">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -252,7 +252,7 @@
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1642983019" xil_pn:in_ck="8114267172152424694" xil_pn:name="TRAN_impactProgrammingTool" xil_pn:prop_ck="2682241697568822907" xil_pn:start_ts="1642983019">
+    <transform xil_pn:end_ts="1643032045" xil_pn:in_ck="8114267172152424694" xil_pn:name="TRAN_impactProgrammingTool" xil_pn:prop_ck="2682241697568822907" xil_pn:start_ts="1643032045">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -260,15 +260,19 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1642862158" xil_pn:in_ck="8114267172152424694" xil_pn:name="TRAN_genImpactFile" xil_pn:prop_ck="-7047989797201823252" xil_pn:start_ts="1642862156">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1642983004" xil_pn:in_ck="-5571504731716657130" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1642982997">
+    <transform xil_pn:end_ts="1643032019" xil_pn:in_ck="-5571504731716657130" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1643032004">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="CAD971Test.twr"/>
