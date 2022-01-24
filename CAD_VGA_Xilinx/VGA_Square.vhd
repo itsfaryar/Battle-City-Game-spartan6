@@ -38,7 +38,7 @@ architecture Behavioral of VGA_Square is
 	signal sevensegmentNextState : bit_vector(3 downto 0):= "1110";
 	signal sg0,sg1,sg2,sg3,sevensegmentOut : bit_vector(7 downto 0):=x"c0";
 	signal Prescaler,bulletdelay,prescalerspeed: std_logic_vector(30 downto 0) := (others => '0');
-	--signal flag_posx: std_logic_vector(6 downto 0);
+	signal flag_posx: integer range 0 to 19 :=0;
 	signal pseudo_rand: std_logic_vector(31 downto 0) :=(others => '0');
 	signal p_rand : std_logic_vector(6 downto 0) :=(others => '0');
 	constant startPositionsX : POSITION_ARRAY := (100,122,144,166,188,210,232,254,276,296,320,342,364,386,408,430,452,474,496,518,540);
@@ -270,11 +270,12 @@ variable x,y: integer :=0;
 			ground <= ((others=> (others=>EMPTY)));
 			bulletdelay <= (others=>'0');
 			bulletOut<='0';
+			pl_initx <= 0;
 		elsif rising_edge(CLK_24MHz) then
 			if init='1' then
 				pseudo_rand <= lfsr32(pseudo_rand);
 				p_rand <= not pseudo_rand(6 downto 0);
-				if p_rand>="0000000" and p_rand<"0000111" then
+				if p_rand>="0000000" and p_rand<"0000101" then
 					if ground(y,x)= EMPTY then
 						ground(y,x)<=ICE;
 						if y+1<=19 then
@@ -288,11 +289,11 @@ variable x,y: integer :=0;
 							ground(y-2,x)<=ICE;
 						end if;
 					end if;
-				elsif p_rand>="0000111" and p_rand<"0010111" then
+				elsif p_rand>="0000101" and p_rand<"0010101" then
 					if ground(y,x)= EMPTY then
 						ground(y,x)<=WALL;
 					end if;
-				elsif p_rand>="0010111" and p_rand<"0110111" then
+				elsif p_rand>="0010101" and p_rand<"1000110" then
 					if ground(y,x)= EMPTY then
 						ground(y,x)<=BRICK;
 					end if;
@@ -307,9 +308,12 @@ variable x,y: integer :=0;
 					else
 						y:=0;
 						init <= '0';
-						ground(19, CONV_INTEGER(pseudo_rand(4 downto 0))rem 20) <= FLAG;
-						x:=(CONV_INTEGER(pseudo_rand(10 downto 5))rem 20);
-						pl_initx<=x;
+						flag_posx<=(CONV_INTEGER(pseudo_rand(4 downto 0))rem 18)+1;
+						ground(19, flag_posx) <= FLAG;
+						ground(18, flag_posx) <=BRICK;
+						ground(19, flag_posx-1) <=BRICK;
+						ground(19, flag_posx+1) <=BRICK;
+						pl_initx<=(CONV_INTEGER(pseudo_rand(10 downto 5))rem 20);
 						ground(0,pl_initx) <=	EMPTY;
 						
 					end if;
@@ -317,6 +321,7 @@ variable x,y: integer :=0;
 --			ground(19,CONV_INTEGER(pseudo_rand(10 downto 5))rem 19) <= FLAG;
 			else
 				if gameStart='1' then
+					
 					if sw(0)='0' and bulletOut='0' and gameEnded='0' then
 								bullet_dir<=player_dir;
 								bullet_x<=pl_posx;
@@ -376,7 +381,7 @@ variable x,y: integer :=0;
 	sg0 <= sevenSegLookup(time_m_10) when gameStart='1' 
 			else sevenSegLookup(4);
 	sg1 <= sevenSegLookup(time_m_01) when gameStart='1' 
-			else sevenSegLookup(9);
+			else sevenSegLookup(0);
 	sg2 <= sevenSegLookup(time_s_10) when gameStart='1' 
 			else sevenSegLookup(3);
 	sg3 <= sevenSegLookup(time_s_01) when gameStart='1' 

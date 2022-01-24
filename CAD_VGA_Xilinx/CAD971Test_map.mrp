@@ -10,23 +10,23 @@ Target Device  : xc6slx9
 Target Package : tqg144
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Tue Jan 25 00:16:59 2022
+Mapped Date    : Tue Jan 25 02:55:26 2022
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    8
 Slice Logic Utilization:
-  Number of Slice Registers:                 1,432 out of  11,440   12%
-    Number used as Flip Flops:               1,421
+  Number of Slice Registers:                 1,524 out of  11,440   13%
+    Number used as Flip Flops:               1,513
     Number used as Latches:                     11
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      3,828 out of   5,720   66%
-    Number used as logic:                    3,820 out of   5,720   66%
-      Number using O6 output only:           3,442
+  Number of Slice LUTs:                      4,709 out of   5,720   82%
+    Number used as logic:                    4,701 out of   5,720   82%
+      Number using O6 output only:           4,300
       Number using O5 output only:              91
-      Number using O5 and O6:                  287
+      Number using O5 and O6:                  310
       Number used as ROM:                        0
     Number used as Memory:                       2 out of   1,440    1%
       Number used as Dual Port RAM:              0
@@ -41,15 +41,15 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                 1,157 out of   1,430   80%
+  Number of occupied Slices:                 1,416 out of   1,430   99%
   Number of MUXCYs used:                       392 out of   2,860   13%
-  Number of LUT Flip Flop pairs used:        4,034
-    Number with an unused Flip Flop:         2,643 out of   4,034   65%
-    Number with an unused LUT:                 206 out of   4,034    5%
-    Number of fully used LUT-FF pairs:       1,185 out of   4,034   29%
-    Number of unique control sets:             436
+  Number of LUT Flip Flop pairs used:        4,857
+    Number with an unused Flip Flop:         3,373 out of   4,857   69%
+    Number with an unused LUT:                 148 out of   4,857    3%
+    Number of fully used LUT-FF pairs:       1,336 out of   4,857   27%
+    Number of unique control sets:             248
     Number of slice register sites lost
-      to control set restrictions:           2,190 out of  11,440   19%
+      to control set restrictions:           1,274 out of  11,440   11%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -59,7 +59,7 @@ Slice Logic Distribution:
 
 IO Utilization:
   Number of bonded IOBs:                        42 out of     102   41%
-    Number of LOCed IOBs:                       34 out of      42   80%
+    Number of LOCed IOBs:                       42 out of      42  100%
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
@@ -86,11 +86,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                5.31
+Average Fanout of Non-Clock Nets:                5.69
 
 Peak Memory Usage:  4578 MB
-Total REAL time to MAP completion:  1 mins 30 secs 
-Total CPU time to MAP completion:   1 mins 30 secs 
+Total REAL time to MAP completion:  19 mins 59 secs 
+Total CPU time to MAP completion:   19 mins 58 secs 
 
 Table of Contents
 -----------------
@@ -113,19 +113,19 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
+WARNING:PhysDesignRules:372 - Gated clock. Clock net VGA_SQ/posx_1_G is sourced
+   by a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net VGA_SQ/posx_4_G is sourced
    by a combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net VGA_SQ/posy_2_G is sourced
+WARNING:PhysDesignRules:372 - Gated clock. Clock net VGA_SQ/posy_1_G is sourced
    by a combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net VGA_SQ/posy_0_G is sourced
    by a combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net VGA_SQ/posx_1_G is sourced
-   by a combinatorial pin. This is not good design practice. Use the CE pin to
-   control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net VGA_SQ/posy_1_G is sourced
+WARNING:PhysDesignRules:372 - Gated clock. Clock net VGA_SQ/posy_2_G is sourced
    by a combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net VGA_SQ/posx_3_G is sourced
@@ -159,9 +159,6 @@ INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
    1.260 Volts)
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
-INFO:Place:834 - Only a subset of IOs are locked. Out of 42 IOs, 34 are locked
-   and 8 are not locked. If you would like to print the names of these IOs,
-   please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
 INFO:Pack:1650 - Map created a placed design.
 
 Section 4 - Removed Logic Summary

@@ -44,3 +44,12 @@ NET   "outseg[2]"       LOC=P41;
 NET   "outseg[3]"       LOC=P32;
 
 
+# Leds
+NET "Leds[7]"                   LOC=P120;
+NET "Leds[6]"                   LOC=P121;
+NET "Leds[5]"                   LOC=P123;
+NET "Leds[4]"                   LOC=P124;
+NET "Leds[3]"                   LOC=P126;
+NET "Leds[2]"                   LOC=P127;
+NET "Leds[1]"                   LOC=P131;
+NET "Leds[0]"                   LOC=P132;
