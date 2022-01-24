@@ -22,6 +22,9 @@ entity CAD971Test is
 		Key : in std_logic_vector(3 downto 0);
 		SW : in std_logic_vector(7 downto 0);
 		
+		--///////////LEDS/////////////
+		Leds : out std_logic_vector(7 downto 0);
+		
 		--////////////Segments////////
 		outseg         : out bit_vector(3 downto 0); --Enable of segments to choose one
 		sevensegments  : out bit_vector(7 downto 0)
@@ -55,7 +58,8 @@ Component VGA_Square
 			sevenseg		: out bit_vector(7 downto 0);
 			segout		: out bit_vector(3 downto 0);
 			Key 				: in std_logic_vector(3 downto 0);
-			SW 				: in std_logic_vector(7 downto 0)
+			SW 				: in std_logic_vector(7 downto 0);
+			Leds : out std_logic_vector(7 downto 0)
   );
 end component;
 
@@ -90,7 +94,8 @@ begin
 				sevenseg			=> sevensegments,
 				segout			=> outseg,
 				key            => key,
-				sw             => sw
+				sw             => sw,
+				Leds				=> Leds
 			);
 	 
 	
