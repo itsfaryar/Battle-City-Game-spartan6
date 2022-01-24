@@ -37,11 +37,11 @@ Setup/Hold to clock CLOCK_24
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-Key<0>      |    6.839(R)|      SLOW  |   -0.067(R)|      SLOW  |CLOCK_24_BUFGP    |   0.000|
-Key<1>      |   10.327(R)|      SLOW  |   -1.570(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-Key<2>      |    6.744(R)|      SLOW  |   -1.572(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-Key<3>      |    8.224(R)|      SLOW  |   -1.026(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-SW<0>       |   10.043(R)|      SLOW  |   -1.097(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+Key<0>      |    6.064(R)|      SLOW  |   -0.766(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+Key<1>      |    5.688(R)|      SLOW  |   -1.182(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+Key<2>      |    4.773(R)|      SLOW  |   -1.309(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+Key<3>      |    7.157(R)|      SLOW  |   -0.644(R)|      SLOW  |CLOCK_24_BUFGP    |   0.000|
+SW<0>       |   12.617(R)|      SLOW  |   -1.975(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock CLOCK_24 to Pad
@@ -49,69 +49,58 @@ Clock CLOCK_24 to Pad
                 |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination     |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ----------------+-----------------+------------+-----------------+------------+------------------+--------+
-VGA_B<0>        |        24.159(R)|      SLOW  |         4.854(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_B<1>        |        25.166(R)|      SLOW  |         4.764(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_G<0>        |        23.801(R)|      SLOW  |         4.192(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_G<1>        |        24.958(R)|      SLOW  |         4.914(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_HS          |        11.210(R)|      SLOW  |         4.513(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_R<0>        |        23.831(R)|      SLOW  |         4.516(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_R<1>        |        25.274(R)|      SLOW  |         4.686(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-VGA_VS          |        12.496(R)|      SLOW  |         4.760(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-outseg<0>       |        10.370(R)|      SLOW  |         4.142(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-outseg<1>       |        10.560(R)|      SLOW  |         4.241(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-outseg<2>       |        10.645(R)|      SLOW  |         4.089(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-outseg<3>       |        10.527(R)|      SLOW  |         3.998(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-sevensegments<0>|        12.134(R)|      SLOW  |         4.166(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-sevensegments<1>|        12.409(R)|      SLOW  |         4.560(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-sevensegments<2>|        11.842(R)|      SLOW  |         3.934(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-sevensegments<3>|        11.522(R)|      SLOW  |         4.185(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-sevensegments<4>|        11.315(R)|      SLOW  |         3.979(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-sevensegments<5>|        11.852(R)|      SLOW  |         4.071(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
-sevensegments<6>|        12.126(R)|      SLOW  |         4.345(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_B<0>        |        26.958(R)|      SLOW  |         4.741(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_B<1>        |        27.085(R)|      SLOW  |         5.228(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_G<0>        |        27.862(R)|      SLOW  |         4.533(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_G<1>        |        27.197(R)|      SLOW  |         4.462(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_HS          |        11.405(R)|      SLOW  |         4.637(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_R<0>        |        26.769(R)|      SLOW  |         4.488(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_R<1>        |        27.767(R)|      SLOW  |         4.672(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+VGA_VS          |        11.874(R)|      SLOW  |         4.379(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+outseg<0>       |        10.390(R)|      SLOW  |         4.253(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+outseg<1>       |        10.294(R)|      SLOW  |         4.208(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+outseg<2>       |        10.219(R)|      SLOW  |         4.055(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+outseg<3>       |        10.118(R)|      SLOW  |         4.000(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+sevensegments<0>|        15.485(R)|      SLOW  |         4.804(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+sevensegments<1>|        15.519(R)|      SLOW  |         4.125(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+sevensegments<2>|        15.417(R)|      SLOW  |         4.439(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+sevensegments<3>|        12.856(R)|      SLOW  |         4.690(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+sevensegments<4>|        12.572(R)|      SLOW  |         3.776(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+sevensegments<5>|        15.291(R)|      SLOW  |         4.350(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
+sevensegments<6>|        15.472(R)|      SLOW  |         4.220(R)|      FAST  |CLOCK_24_BUFGP    |   0.000|
 ----------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock RESET_N to Pad
-----------------+-----------------+------------+-----------------+------------+------------------+--------+
-                |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
-Destination     |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
-----------------+-----------------+------------+-----------------+------------+------------------+--------+
-VGA_B<0>        |        18.851(R)|      SLOW  |         7.506(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-VGA_B<1>        |        18.918(R)|      SLOW  |         7.587(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-VGA_G<0>        |        18.959(R)|      SLOW  |         7.574(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-VGA_G<1>        |        18.904(R)|      SLOW  |         7.610(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-VGA_R<0>        |        18.634(R)|      SLOW  |         7.034(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-VGA_R<1>        |        18.607(R)|      SLOW  |         7.354(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-outseg<0>       |        10.765(R)|      SLOW  |         4.634(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-outseg<1>       |        10.955(R)|      SLOW  |         4.733(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-outseg<2>       |        10.150(R)|      SLOW  |         4.240(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-outseg<3>       |        10.030(R)|      SLOW  |         4.149(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-sevensegments<0>|        12.168(R)|      SLOW  |         4.444(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-sevensegments<1>|        12.443(R)|      SLOW  |         4.752(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-sevensegments<2>|        11.876(R)|      SLOW  |         4.131(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-sevensegments<3>|        11.328(R)|      SLOW  |         4.849(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-sevensegments<4>|        11.318(R)|      SLOW  |         4.677(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-sevensegments<5>|        11.868(R)|      SLOW  |         5.169(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-sevensegments<6>|        12.146(R)|      SLOW  |         5.257(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
-----------------+-----------------+------------+-----------------+------------+------------------+--------+
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+VGA_B<0>    |        21.463(R)|      SLOW  |        10.353(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
+VGA_B<1>    |        21.590(R)|      SLOW  |        10.359(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
+VGA_G<0>    |        22.367(R)|      SLOW  |        10.820(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
+VGA_G<1>    |        21.445(R)|      SLOW  |        10.303(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
+VGA_R<0>    |        21.274(R)|      SLOW  |        10.186(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
+VGA_R<1>    |        22.272(R)|      SLOW  |        10.707(R)|      FAST  |RESET_N_IBUF_BUFG |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock CLOCK_24
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLOCK_24       |   19.365|         |         |         |
-RESET_N        |   16.496|   14.467|         |         |
+CLOCK_24       |   17.089|         |         |         |
+RESET_N        |   19.827|   10.724|         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Mon Jan 24 17:54:02 2022 
+Analysis completed Mon Jan 24 23:29:52 2022 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 4631 MB
+Peak Memory Usage: 4629 MB
 
 
 
