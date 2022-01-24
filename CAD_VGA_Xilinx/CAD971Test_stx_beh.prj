@@ -1,0 +1,3 @@
+vhdl isim_temp "VGA_Square.vhd"
+vhdl isim_temp "VGA_controller.vhd"
+vhdl isim_temp "CAD971Test.vhd"

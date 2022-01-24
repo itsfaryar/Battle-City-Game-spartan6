@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "D:/Battle-City-Game-spartan6/CAD_VGA_Xilinx/CAD971Test_isim_beh.exe" -prj "D:/Battle-City-Game-spartan6/CAD_VGA_Xilinx/CAD971Test_beh.prj" "work.CAD971Test" 

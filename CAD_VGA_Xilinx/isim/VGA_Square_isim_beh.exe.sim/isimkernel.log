@@ -1,0 +1,28 @@
+Command line:
+   VGA_Square_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  12652
+
+Sun Jan 23 22:51:01 2022
+
+
+ Elaboration Time: 0.078125 sec
+
+ Current Memory Usage: 5154.64 Meg
+
+ Total Signals          : 29
+ Total Nets             : 546
+ Total Signal Drivers   : 23
+ Total Blocks           : 5
+ Total Primitive Blocks : 5
+ Total Processes        : 10
+ Total Traceable Variables  : 22
+ Total Scalar Nets and Variables : 3105
+
+ Total Simulation Time: 0.1875 sec
+
+ Current Memory Usage: 4682.78 Meg
+
+Sun Jan 23 22:53:27 2022
+
