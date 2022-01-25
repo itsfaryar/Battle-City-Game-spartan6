@@ -1,10 +1,14 @@
 # Battle-City-Game-spartan6
 
-Board Spartan6-LX9
+Board : 
 
-Board Documents:
+   Spartan6-LX9
+      
+   Documents: https://github.com/mhaghighi/posedge_one/tree/master/Posedge_One
 
-https://github.com/mhaghighi/posedge_one/tree/master/Posedge_One
+
+
+
 
 pictures of game envirement :
 
