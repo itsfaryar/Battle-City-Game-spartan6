@@ -25,7 +25,7 @@ architecture Behavioral of VGA_Square is
 	type numberLookup is array (0 to 9) of bit_vector(7 downto 0) ;
 	type POSITION_ARRAY is array (0 to 20) of integer ;
 	type BITMAP is array (0 to 21, 0 to 21) of bit ;
-	signal posx,posy,pl_posx,pl_posy,time_s,time_m,bullet_x,bullet_y,pl_initx: integer := 0;
+	signal posx,posy,pl_posx,pl_posy,time_s,time_m,bullet_x,bullet_y: integer := 0;
 	signal time_s_10,time_s_01,time_m_10,time_m_01 :integer range 0 to 9 :=0;
 	signal player_dir,bullet_dir: DIRECTION:=UP;
 	signal bulletOut : bit := '0';
@@ -38,7 +38,7 @@ architecture Behavioral of VGA_Square is
 	signal sevensegmentNextState : bit_vector(3 downto 0):= "1110";
 	signal sg0,sg1,sg2,sg3,sevensegmentOut : bit_vector(7 downto 0):=x"c0";
 	signal Prescaler,bulletdelay,prescalerspeed: std_logic_vector(30 downto 0) := (others => '0');
-	signal flag_posx: integer range 0 to 19 :=0;
+	signal flag_posx,pl_initx: integer range 0 to 19 :=0;
 	signal pseudo_rand: std_logic_vector(31 downto 0) :=(others => '0');
 	signal p_rand : std_logic_vector(6 downto 0) :=(others => '0');
 	constant startPositionsX : POSITION_ARRAY := (100,122,144,166,188,210,232,254,276,296,320,342,364,386,408,430,452,474,496,518,540);
@@ -490,14 +490,14 @@ variable x,y: integer :=0;
 			gameStart<='0';
 			Prescaler <= (others => '0');
 			
-	      
+	      pl_posx<=0;
 			pl_posy<=0;
 			pl_init<='1';
 			player_dir <= DOWN;
 			prescalerspeed<= "0000000100110001001011010000000";
 			
 		elsif rising_edge(CLK_24MHz) then
-			if pl_init='1' then
+			if pl_init='1' and init='0' then
 				pl_posx<=pl_initx;
 				pl_init<='0';
 			elsif init='0' then

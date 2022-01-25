@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Tue Jan 25 03:15:31 2022">
+  <application stringID="par" timeStamp="Tue Jan 25 04:01:10 2022">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -59,12 +59,12 @@
     </task>
     <task stringID="PAR_PAR">
       <section stringID="PAR_DESIGN_SUMMARY">
-        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="1 mins 48 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="1 mins 50 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="1 mins 28 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="1 mins 31 secs "/>
         <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
         <item dataType="float" stringID="PAR_TIMING_SCORE" value="0.000000"/>
-        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="2 mins 4 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="2 mins 7 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="1 mins 44 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="1 mins 47 secs "/>
       </section>
     </task>
     <task stringID="PAR_par">
@@ -1294,7 +1294,7 @@
     </task>
   </application>
 
-  <application stringID="Par" timeStamp="Tue Jan 25 03:15:31 2022">
+  <application stringID="Par" timeStamp="Tue Jan 25 04:01:11 2022">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -1347,9 +1347,9 @@
           <item dataType="int" stringID="PAR_NUM_SLICE_LATCHLOGIC" value="0"/>
         </item>
         <item AVAILABLE="5720" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="4709">
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ONLY" value="91"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O6ONLY" value="4300"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ANDO6" value="310"/>
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ONLY" value="92"/>
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O6ONLY" value="4298"/>
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ANDO6" value="311"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O5ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O6ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O5ANDO6" value="0"/>
@@ -1369,15 +1369,15 @@
           <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_CARRY4" value="6"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_OTHERS" value="0"/>
         </item>
-        <item AVAILABLE="1430" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="1416">
-          <item AVAILABLE="355" dataType="int" stringID="PAR_NUM_SLICEL" value="484"/>
+        <item AVAILABLE="1430" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="1417">
+          <item AVAILABLE="355" dataType="int" stringID="PAR_NUM_SLICEL" value="485"/>
           <item AVAILABLE="360" dataType="int" stringID="PAR_NUM_SLICEM" value="2"/>
           <item AVAILABLE="715" dataType="int" stringID="PAR_NUM_SLICEX" value="930"/>
         </item>
-        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="4857">
-          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="3373"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="148"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="1336"/>
+        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="4851">
+          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="3367"/>
+          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="142"/>
+          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="1342"/>
         </item>
       </section>
       <section stringID="PAR_IOB_REPORTING">
