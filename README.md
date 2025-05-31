@@ -32,7 +32,8 @@ picture of the board :
 ![Board](https://github.com/FaryarD/Battle-City-Game-spartan6/blob/main/Pictures/board.jpg)
 
 Video of AI playing the game:
-[Test Video](https://github.com/FaryarD/Battle-City-Game-spartan6/blob/main/Pictures/AI playing video.mp4)
+[![AI Playing Test]()](https://youtube.com/shorts/GZpM-0rKwTw?feature=share)
+
 
 
 
